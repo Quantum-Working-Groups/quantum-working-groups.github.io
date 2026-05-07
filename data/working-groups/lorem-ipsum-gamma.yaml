@@ -1,0 +1,21 @@
+id: lorem-ipsum-gamma
+title: "Lorem Ipsum Gamma"
+acronym: LIG
+shortDescription: "At vero eos et accusamus et iusto odio<br>Dignissimos ducimus qui blanditiis praesentium<br>Voluptatum deleniti atque corrupti quos"
+longDescription: >
+  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+  voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+  cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi,
+  id est laborum et dolorum fuga.
+committeeMembers:
+  - name: "At Vero Eos"
+    institution: "Accusamus Institute"
+  - name: "Dignissimos Ducimus"
+    institution: "Blanditiis University"
+  - name: "Cupiditate Non"
+    institution: "Provident Laboratory"
+resources:
+  - title: "Introduction to Lorem Ipsum Gamma"
+    url: "https://example.com/lorem-ipsum-gamma"
+  - title: "Gamma Working Group Charter"
+    url: "https://example.com/lorem-ipsum-gamma/charter"

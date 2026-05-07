@@ -1,0 +1,19 @@
+id: lorem-ipsum-beta
+title: "Lorem Ipsum Beta"
+acronym: LIB
+shortDescription: "Ut enim ad minim veniam quis nostrud<br>Exercitation ullamco laboris nisi aliquip<br>Ex ea commodo consequat duis aute"
+longDescription: >
+  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+  laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+  architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+  sit aspernatur aut odit aut fugit.
+committeeMembers:
+  - name: "Sed Perspiciatis"
+    institution: "Voluptatem Institute"
+  - name: "Nemo Enim Ipsam"
+    institution: "Quasi Architecto University"
+resources:
+  - title: "Introduction to Lorem Ipsum Beta"
+    url: "https://example.com/lorem-ipsum-beta"
+  - title: "Beta Working Group Charter"
+    url: "https://example.com/lorem-ipsum-beta/charter"

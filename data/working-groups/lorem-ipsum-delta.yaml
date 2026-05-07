@@ -1,0 +1,19 @@
+id: lorem-ipsum-delta
+title: "Lorem Ipsum Delta"
+acronym: LID
+shortDescription: "Nam libero tempore cum soluta nobis<br>Eligendi optio cumque nihil impedit<br>Quo minus id quod maxime placeat"
+longDescription: >
+  Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
+  id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+  repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
+  saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+committeeMembers:
+  - name: "Nam Libero"
+    institution: "Tempore University"
+  - name: "Eligendi Optio"
+    institution: "Cumque Nihil Institute"
+resources:
+  - title: "Introduction to Lorem Ipsum Delta"
+    url: "https://example.com/lorem-ipsum-delta"
+  - title: "Delta Working Group Charter"
+    url: "https://example.com/lorem-ipsum-delta/charter"
