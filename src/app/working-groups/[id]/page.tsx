@@ -18,6 +18,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${group.title} | Quantum Technical Working Groups`,
     description,
+    openGraph: {
+      title: group.title,
+      description,
+      images: [{ url: `/working-groups/${id}/opengraph-image`, width: 1200, height: 630 }],
+    },
   };
 }
 

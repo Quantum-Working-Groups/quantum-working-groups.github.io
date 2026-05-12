@@ -25,6 +25,12 @@ const plexSerif = IBM_Plex_Serif({
 export const metadata: Metadata = {
   title: "Quantum Technical Working Groups",
   description: "Quantum research for the real world",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"),
+  openGraph: {
+    title: "Quantum Technical Working Groups",
+    description: "Quantum research for the real world",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
 };
 
 export default function RootLayout({
