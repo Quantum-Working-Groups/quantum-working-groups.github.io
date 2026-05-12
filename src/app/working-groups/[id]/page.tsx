@@ -53,7 +53,7 @@ export default async function WorkingGroupPage({ params }: Props) {
           <div className="px-10 py-20 max-w-page mx-auto">
             <div className="max-w-page flex flex-col gap-16">
               {/* About */}
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6 lg:max-w-[50%]">
                 <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
                   About this working group
                 </h2>
@@ -63,7 +63,7 @@ export default async function WorkingGroupPage({ params }: Props) {
               </div>
 
               {/* Joint steering committee */}
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-8 lg:max-w-[80%]">
                 <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
                   Joint steering committee
                 </h2>
