@@ -12,7 +12,7 @@ export function Nav() {
           Quantum Technical Working Groups
         </Link>
         <a
-          href="https://github.com/placeholder/placeholder"
+          href="https://github.com/Quantum-Working-Groups/quantum-working-groups.github.io"
           target="_blank"
           rel="noopener noreferrer"
           className="p-2 text-text-primary hover:bg-gray-100 rounded-full"
