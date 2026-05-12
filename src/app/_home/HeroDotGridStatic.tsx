@@ -1,9 +1,4 @@
-"use client";
-
-import { motion } from "motion/react";
 import {
-  CYCLE_SECONDS,
-  KEYFRAME_TIMES,
   RADIUS,
   STROKE_WIDTH,
   TRACKS,
@@ -19,7 +14,7 @@ type Props = {
   className?: string;
 };
 
-export function HeroDotGrid({ width, height, className }: Props) {
+export function HeroDotGridStatic({ width, height, className }: Props) {
   const renderHeight = height ?? 502;
   const renderWidth = width ?? Math.round((VIEWBOX_W / VIEWBOX_H) * renderHeight);
 
@@ -35,7 +30,7 @@ export function HeroDotGrid({ width, height, className }: Props) {
     >
       <defs>
         <linearGradient
-          id="heroDotGridStroke"
+          id="heroDotGridStaticStroke"
           x1="0"
           y1="0"
           x2="500"
@@ -47,30 +42,16 @@ export function HeroDotGrid({ width, height, className }: Props) {
         </linearGradient>
       </defs>
       {TRACKS.map(({ id, cells }) => {
-        const [r0, c0] = cells[0];
-        const x0 = cellX(c0);
-        const y0 = cellY(r0);
-        const xs = cells.map(([, c]) => cellX(c) - x0);
-        const ys = cells.map(([r]) => cellY(r) - y0);
-
+        const [r0, c0] = cells[2];
         return (
-          <motion.circle
+          <circle
             key={id}
-            cx={x0}
-            cy={y0}
+            cx={cellX(c0)}
+            cy={cellY(r0)}
             r={RADIUS}
-            stroke="url(#heroDotGridStroke)"
+            stroke="url(#heroDotGridStaticStroke)"
             strokeWidth={STROKE_WIDTH}
             fill="none"
-            initial={{ x: 0, y: 0 }}
-            animate={{ x: xs, y: ys }}
-            transition={{
-              duration: CYCLE_SECONDS,
-              times: KEYFRAME_TIMES,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
           />
         );
       })}

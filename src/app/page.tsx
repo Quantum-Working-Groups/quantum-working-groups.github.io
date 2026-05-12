@@ -1,6 +1,7 @@
 import { getWorkingGroups } from "@/lib/working-groups";
 import { WorkingGroupGrid } from "./_home/WorkingGroupGrid";
 import { HeroDotGrid } from "./_home/HeroDotGrid";
+import { HeroDotGridStatic } from "./_home/HeroDotGridStatic";
 
 export default function Home() {
   const groups = getWorkingGroups();
@@ -9,8 +10,14 @@ export default function Home() {
     <>
       {/* Hero */}
       <section>
-        <div className="max-w-page mx-auto flex items-center p-[80px] gap-[80px]">
-          <div className="flex flex-col gap-8">
+        <div className="max-w-page mx-auto flex flex-col items-center lg:flex-row p-[40px] lg:p-[80px] gap-[40px] lg:gap-[80px]">
+
+          <div className="flex pointer-events-none lg:order-last lg:justify-end">
+            <HeroDotGrid height={419} className="hidden lg:block" />
+            <HeroDotGridStatic height={292} className="lg:hidden" />
+          </div>
+
+          <div className="flex flex-col gap-8 text-center lg:text-left">
             <h1 className="font-serif font-normal text-[54px] leading-[64px] text-text-primary">
               Quantum research for the real world
             </h1>
@@ -18,7 +25,7 @@ export default function Home() {
               Select a working group below to explore its mission, steering
               committee, and key publications.
             </p>
-            <div>
+            <div className="flex justify-center lg:justify-start">
               <a
                 href="#working-groups"
                 className="inline-flex items-center gap-2 bg-teal-70 text-white text-sm tracking-[0.16px] px-6 py-3 rounded-[50px] hover:bg-[#004d4d] transition-colors"
@@ -29,10 +36,6 @@ export default function Home() {
                 </svg>
               </a>
             </div>
-          </div>
-
-          <div className="inset-0 flex items-center justify-end pointer-events-none">
-            <HeroDotGrid height={510} />
           </div>
         </div>
       </section>
