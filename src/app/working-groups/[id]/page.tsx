@@ -31,7 +31,7 @@ export default async function WorkingGroupPage({ params }: Props) {
   return (
     <>
       {/* Hero banner */}
-        <section className="bg-teal-70 relative py-[100px]">
+        <section className="bg-[#004144] relative py-[100px]">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <DetailsHeroBackground className="w-full h-full" />
           </div>
