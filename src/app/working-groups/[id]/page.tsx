@@ -68,49 +68,53 @@ export default async function WorkingGroupPage({ params }: Props) {
               </div>
 
               {/* Joint steering committee */}
-              <div className="flex flex-col gap-8 lg:max-w-[80%]">
-                <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
-                  Joint steering committee
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {group.committeeMembers.map((member, i) => (
-                    <div
-                      key={i}
-                      className="bg-layer-01 p-4 flex flex-col gap-1"
-                    >
-                      <p className="font-sans font-semibold text-base text-text-primary leading-[24px]">
-                        {member.name}
-                      </p>
-                      <p className="font-sans font-normal text-base text-text-secondary leading-[24px]">
-                        {member.institution}
-                      </p>
-                    </div>
-                  ))}
+              {group.committeeMembers.length > 0 && (
+                <div className="flex flex-col gap-8 lg:max-w-[80%]">
+                  <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
+                    Joint steering committee
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {group.committeeMembers.map((member, i) => (
+                      <div
+                        key={i}
+                        className="bg-layer-01 p-4 flex flex-col gap-1"
+                      >
+                        <p className="font-sans font-semibold text-base text-text-primary leading-[24px]">
+                          {member.name}
+                        </p>
+                        <p className="font-sans font-normal text-base text-text-secondary leading-[24px]">
+                          {member.institution}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Resources */}
-              <div className="flex flex-col gap-8">
-                <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
-                  Explore resources
-                </h2>
-                <div className="flex flex-col">
-                  {group.resources.map((resource, i) => (
-                    <div key={i}>
-                      <a
-                        href={resource.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 py-3 text-base text-text-primary hover:underline leading-[22px]"
-                      >
-                        {resource.title}
-                        <ArrowRight size={16} className="shrink-0" />
-                      </a>
-                      <hr className="border-border-subtle" />
-                    </div>
-                  ))}
+              {group.resources.length > 0 && (
+                <div className="flex flex-col gap-8">
+                  <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
+                    Explore resources
+                  </h2>
+                  <div className="flex flex-col">
+                    {group.resources.map((resource, i) => (
+                      <div key={i}>
+                        <a
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 py-3 text-base text-text-primary hover:underline leading-[22px]"
+                        >
+                          {resource.title}
+                          <ArrowRight size={16} className="shrink-0" />
+                        </a>
+                        <hr className="border-border-subtle" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
