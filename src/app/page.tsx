@@ -19,7 +19,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col gap-8 text-center lg:text-left">
-            <h1 className="font-serif font-normal text-[54px] leading-[64px] text-text-primary">
+            <h1 className="font-serif font-normal text-[54px] leading-[64px] text-balance">
               Quantum research for the real world
             </h1>
             <p className="text-base text-text-secondary leading-[24px]">

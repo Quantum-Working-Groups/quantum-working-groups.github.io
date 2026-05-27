@@ -47,7 +47,7 @@ export default async function WorkingGroupPage({ params }: Props) {
               </Link>
               {" /"}
             </p>
-            <h1 className="font-serif font-normal text-[48px] leading-[56px] text-white text-center">
+            <h1 className="font-serif font-normal text-[48px] leading-[56px] text-white text-center text-balance">
               {group.title}
             </h1>
           </div>
@@ -59,7 +59,7 @@ export default async function WorkingGroupPage({ params }: Props) {
             <div className="max-w-page flex flex-col gap-16">
               {/* About */}
               <div className="flex flex-col gap-6 lg:max-w-[50%]">
-                <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
+                <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary text-balance">
                   About this working group
                 </h2>
                 <p className="text-base text-text-secondary leading-[22px]">
@@ -70,7 +70,7 @@ export default async function WorkingGroupPage({ params }: Props) {
               {/* Joint steering committee */}
               {group.committeeMembers.length > 0 && (
                 <div className="flex flex-col gap-8 lg:max-w-[80%]">
-                  <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
+                  <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary text-balance">
                     Joint steering committee
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -94,7 +94,7 @@ export default async function WorkingGroupPage({ params }: Props) {
               {/* Resources */}
               {group.resources.length > 0 && (
                 <div className="flex flex-col gap-8">
-                  <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
+                  <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary text-balance">
                     Explore resources
                   </h2>
                   <div className="flex flex-col">
