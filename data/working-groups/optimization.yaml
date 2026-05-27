@@ -1,0 +1,41 @@
+id: optimization
+title: "Quantum Optimization"
+acronym: QOWG
+shortDescription: > 
+  Driving quantum optimization from theory to practice, this collaboration combines advanced 
+  algorithms and systematic benchmarking towards demonstrating quantum advantage for real-world use cases.
+longDescription: >
+  Founded in Zurich in 2023, the Quantum Optimization Working Group is an international collaboration that
+  brings together academic and industry experts to advance the field of quantum optimization. Since its
+  inception, the group has produced foundational insights, benchmarking frameworks, and novel algorithms.
+  Through rigorous research and collaborative exchange, the initiative works to clarify the practical
+  potential of quantum optimization, define best practices, and accelerate development of solutions to
+  real-world problems.
+committeeMembers:
+  - name: "David E. Bernal Neira"
+    institution: "Purdue University"
+  - name: "Harry Buhrman"
+    institution: "Quantinuum"
+  - name: "Daniel J. Egger"
+    institution: "IBM"
+  - name: "Thorsten Koch"
+    institution: "Zuse Institute Berlin"
+  - name: "Jakub Marecek"
+    institution: "Czech Technical University"
+  - name: "Corey O'Meara"
+    institution: "E.ON"
+  - name: "Stefan Woerner"
+    institution: "IBM"
+  - name: "Christa Zoufal"
+    institution: "IBM"
+resources:
+  - title: "Whitepaper"
+    url: "https://www.nature.com/articles/s42254-024-00770-9"
+  - title: "Benchmarking paper"
+    url: "https://arxiv.org/abs/2504.03832"
+  - title: "QOBLIB benchmarking repository"
+    url: "https://github.com/ZIB-AOPT/QOBLIB"
+  - title: "CVaR paper"
+    url: "https://www.nature.com/articles/s43588-024-00709-1"
+  - title: "QAMOO paper"
+    url: "https://www.nature.com/articles/s43588-025-00873-y"

@@ -1,0 +1,26 @@
+id: materials-science
+title: Materials Science
+acronym: MSWG
+shortDescription: Taking quantum-centric supercomputing from molecules to materials, from energies to properties.
+longDescription: >
+  An international collaboration spanning academia, government labs, and industry, the Materials Science
+  Working Group is dedicated to identifying realistic materials science problems that are well-suited to
+  exploration on near-term quantum hardware. Its efforts center on problem classes—such as correlated
+  electrons and lattice Hamiltonians—that pose fundamental challenges for classical simulation methods.
+  By producing shared analyses and peer-reviewed research, the working group aims to foster collective
+  learning and define credible pathways toward meaningful quantum applications in
+  materials science.
+committeeMembers:
+  - name: "Javier Aizpurua"
+    institution: "Ikerbasque, DIPC"
+  - name: "Hiroshi Horii"
+    institution: "IBM"
+  - name: "Rodrigo Neumann"
+    institution: "IBM"
+  - name: "Gokul Ravi"
+    institution: "University of Michigan"
+  - name: "Mitsuhisa Sato"
+    institution: "RIKEN Center for Computational Science"
+resources:
+  - title: "Quantum-centric supercomputing for materials science: A perspective on challenges and future directions"
+    url: "https://doi.org/10.1016/j.future.2024.04.060"

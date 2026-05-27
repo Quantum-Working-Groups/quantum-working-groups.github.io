@@ -1,0 +1,16 @@
+id: quantum-machine-learning
+title: "Quantum Machine Learning"
+acronym: QMLWG
+shortDescription: > 
+  Identifying the key questions in quantum machine learning and where quantum computing 
+  may offer new capabilities for learning, modeling, and discovery.
+longDescription: >
+  The Quantum Machine Learning working group brings together researchers to identify the scientific
+  foundations and open questions that can guide the next phase of research at the intersection of quantum
+  computing and machine learning. The group investigates where quantum resources may be relevant in
+  learning problems, including learning from quantum data, constructing quantum-enhanced representations,
+  sampling from complex distributions, and using machine learning to improve quantum algorithms and
+  experiments. A central goal is to connect these questions to applications by formulating well-defined
+  tasks, meaningful baselines, and rigorous evaluation criteria.
+committeeMembers: []
+resources: []

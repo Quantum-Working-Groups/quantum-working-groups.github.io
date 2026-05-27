@@ -1,0 +1,27 @@
+id: qc4hep
+title: "Quantum Computing for High Energy Physics"
+acronym: QC4HEP
+shortDescription: >
+  This technical working group brings together experts to identify and explore 
+  high-impact problems in high energy physics suited to near-term quantum methods.
+longDescription: >
+  The Quantum Computing for High Energy Physics (QC4HEP) Working Group focuses on identifying realistic, 
+  physically relevant problems in High Energy Physics (HEP) that are meaningful to the scientific community, 
+  and which can be addressed using near-term quantum hardware. 
+  The group explores problem classes and families of quantum algorithms that show potential to outperform classical methods.
+committeeMembers:
+  - name: "Michele Grossi"
+    institution: "CERN"
+  - name: "Jad Halimeh"
+    institution: "Ludwig Maximilian University of Munich"
+  - name: "Stefan Kühn"
+    institution: "DESY"
+  - name: "Martin Savage"
+    institution: "University of Washington"
+  - name: "Ivano Taverelli"
+    institution: "IBM"
+  - name: "Sofia Vallecorsa"
+    institution: "CERN"
+  - name: "Voica Radescu"
+    institution: "IBM"
+resources: []

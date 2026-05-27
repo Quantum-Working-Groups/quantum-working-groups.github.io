@@ -1,0 +1,34 @@
+id: hcls
+title: "Healthcare & Life Sciences Quantum"
+acronym: HCLS
+shortDescription: > 
+  Unites experts to advance research in health care and life sciences with the aid of quantum computation 
+  across biomarkers, omics, clinical trials, and beyond.
+longDescription: >
+  Launched in 2023, the Health Care & Life Sciences (HCLS) Quantum Technical Working Group is a global
+  initiative that brings together expertise across health care, life sciences, and computational fields to
+  identify, define, and advance quantum-enabled approaches to challenges in biomarkers, omics, neuroscience,
+  and more. In 2025, the group expanded to include its first geographic hub in Asia-Pacific, strengthening
+  its ability to connect expertise and resources across time zones and continents.
+committeeMembers:
+  - name: "Daniel Blankenberg"
+    institution: "Cleveland Clinic"
+  - name: "Laura Gagliardi"
+    institution: "University of Chicago"
+  - name: "Riddhi Gupta"
+    institution: "University of Queensland"
+  - name: "Gavin Jones"
+    institution: "IBM"
+  - name: "Laxmi Parida"
+    institution: "IBM"
+  - name: "Hideaki Kawaguchi"
+    institution: "University of Tokyo / Keio University"
+  - name: "Sally Shrapnel"
+    institution: "Queensland Digital Health Centre (QDHeC)"
+resources:
+  - title: "How quantum computing can enhance biomarker discovery"
+    url: "https://www.sciencedirect.com/science/article/pii/S2666389925000844"
+  - title: "Advancing single-cell omics and cell-based therapeutics with quantum computing"
+    url: "https://www.nature.com/articles/s41580-025-00918-0"
+  - title: How can quantum computing be applied in clinical trial design and optimization?
+    url: https://www.sciencedirect.com/science/article/pii/S2666389925000844

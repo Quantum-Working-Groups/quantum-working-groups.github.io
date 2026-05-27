@@ -1,0 +1,18 @@
+id: hamiltonian-simulation
+title: "Quantum Hamiltonian Simulation"
+acronym: QHSWG
+shortDescription: > 
+  Combines algorithm development and systematic benchmarking to advance 
+  quantum computing methods for problems including eigenstates, dynamics, thermal states, and more.
+longDescription: >
+  The Quantum Hamiltonian Simulation Working Group is an international collaboration that brings together
+  academic and industry experts to advance quantum computational methods for simulating complex quantum
+  physical systems. Established in New York in 2026, the group focuses on producing theoretical insights,
+  benchmarking frameworks, novel algorithms, and refinements of existing methods across key problem areas,
+  including ground and excited states, time evolution, and thermal states. Through rigorous research and
+  collaborative exchange of ideas and techniques, the group works to benchmark classical and quantum
+  algorithms for Hamiltonian simulation to identify and investigate open problems, technical challenges,
+  and opportunities associated with the use of quantum computers, particularly in hybrid quantum-classical
+  settings.
+committeeMembers: []
+resources: []

@@ -1,0 +1,30 @@
+id: sustainability
+title: "Sustainability Quantum"
+acronym: SQWG
+shortDescription: "Researchers and domain experts explore quantum-centric solutions to sustainable development across energy, forestry, climate, semiconductors, carbon capture, and beyond."
+longDescription: >
+  The Sustainability Quantum Working Group, established in 2024, brings together researchers in quantum
+  computing and domain experts across industries to explore how quantum computing may soon help address
+  complex, high-impact problems in sustainability that lie beyond the reach of classical computing methods.
+  The group investigates problem classes in fields like energy, climate, forestry, semiconductors, and
+  carbon capture to identify use cases where quantum methods may provide meaningful solutions. Through
+  collaborative research and analysis, the working group seeks to clarify the practical potential of
+  quantum computing for sustainable development.
+committeeMembers:
+  - name: "Thomas Baker"
+    institution: "University of Victoria"
+  - name: "Torey Battelle"
+    institution: "Arizona State University"
+  - name: "Alexandre Choquette"
+    institution: "IBM"
+  - name: "Catherine Lefebvre"
+    institution: "Open Quantum Institute"
+  - name: "Corey O'Meara"
+    institution: "E.ON"
+resources:
+  - title: COP report
+    url: https://thequantuminsider.com/2025/11/21/guest-post-quantum-computing-takes-center-stage-at-cop30-with-new-sustainability-report/
+  - title: "Constrained Quantum Optimization at Utility Scale: Application to the Knapsack Problem"
+    url: https://arxiv.org/abs/2603.00260
+  - title: Breaking concentration barriers for quantum extreme learning on digital quantum processors
+    url: https://arxiv.org/abs/2603.13005
