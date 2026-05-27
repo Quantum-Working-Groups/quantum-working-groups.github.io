@@ -47,10 +47,9 @@ export default async function Image() {
         >
           <div
             style={{
-              fontSize: 18,
-              color: "rgba(255,255,255,0.6)",
+              fontSize: 36,
+              color: "#ffffff",
               fontFamily: "IBM Plex Sans",
-              letterSpacing: "0.1em",
               display: "flex",
             }}
           >
@@ -58,12 +57,13 @@ export default async function Image() {
           </div>
           <div
             style={{
-              fontSize: 56,
+              fontSize: 90,
               color: "#ffffff",
               fontFamily: "IBM Plex Serif",
               fontWeight: 400,
               lineHeight: 1.1,
               display: "flex",
+              textWrap: 'balance'
             }}
           >
             Quantum research for the real world
