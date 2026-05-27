@@ -40,7 +40,7 @@ export default async function WorkingGroupPage({ params }: Props) {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <DetailsHeroBackground className="w-full h-full" />
           </div>
-          <div className="px-10 py-16 max-w-page mx-auto flex flex-col items-center gap-4">
+          <div className="relative z-10 px-10 py-16 max-w-page mx-auto flex flex-col items-center gap-4">
             <p className="text-sm text-white/70 tracking-[0.16px]">
               <Link href="/" className="hover:text-white transition-colors">
                 Quantum Technical Working Groups
