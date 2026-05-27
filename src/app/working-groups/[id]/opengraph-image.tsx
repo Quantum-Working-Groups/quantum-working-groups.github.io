@@ -46,19 +46,6 @@ export default async function Image({ params }: Props) {
       >
         <div
           style={{
-            position: "absolute",
-            top: 60,
-            left: 96,
-            fontSize: 16,
-            color: "rgba(255,255,255,0.55)",
-            fontFamily: "IBM Plex Sans",
-            display: "flex",
-          }}
-        >
-          Quantum Technical Working Groups
-        </div>
-        <div
-          style={{
             position: "relative",
             display: "flex",
             flexDirection: "column",
@@ -68,6 +55,16 @@ export default async function Image({ params }: Props) {
             gap: 12,
           }}
         >
+          <div
+            style={{
+              fontSize: 28,
+              color: "#ffffff",
+              fontFamily: "IBM Plex Sans",
+              display: "flex",
+            }}
+          >
+            Quantum Technical Working Groups
+          </div>
           {group && (
             <div
               style={{
@@ -78,6 +75,7 @@ export default async function Image({ params }: Props) {
                 lineHeight: 1.15,
                 maxWidth: 900,
                 display: "flex",
+                textWrap: 'balance'
               }}
             >
               {group.title}
