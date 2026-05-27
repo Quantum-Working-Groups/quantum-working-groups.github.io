@@ -2,6 +2,7 @@ import { getWorkingGroups } from "@/lib/working-groups";
 import { WorkingGroupGrid } from "./_home/WorkingGroupGrid";
 import { HeroDotGrid } from "./_home/HeroDotGrid";
 import { HeroDotGridStatic } from "./_home/HeroDotGridStatic";
+import Link from "next/link";
 
 export default function Home() {
   const groups = getWorkingGroups();
@@ -26,15 +27,15 @@ export default function Home() {
               committee, and key publications.
             </p>
             <div className="flex justify-center lg:justify-start">
-              <a
-                href="#working-groups"
+              <Link
+                href="/#working-groups"
                 className="inline-flex items-center gap-2 bg-teal-70 text-white text-sm tracking-[0.16px] px-6 py-3 rounded-[50px] hover:bg-[#004d4d] transition-colors"
               >
                 Learn more
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                   <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
