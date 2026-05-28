@@ -23,8 +23,9 @@ export default function Home() {
               Quantum research for the real world
             </h1>
             <p className="text-base text-text-secondary leading-[24px]">
-              Select a working group below to explore its mission, steering
-              committee, and key publications.
+              The Quantum Technical Working Groups are collaborative, independently run research initiatives that convene
+              experts from academia, industry, startups, and research institutions worldwide to better understand
+              how quantum computing can contribute to key areas of science and technology.
             </p>
             <div className="flex justify-center lg:justify-start">
               <Link
