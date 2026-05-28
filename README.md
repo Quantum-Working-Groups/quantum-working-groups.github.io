@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quantum Technical Working Groups
 
-## Getting Started
+A website that lists the IBM Quantum Technical Working Groups, their committee members, and published resources.
 
-First, run the development server:
+## Updating the Data
+
+All working group content lives in the `data/working-groups/` folder. Each file is a plain-text YAML file that corresponds to one working group. You can edit these files directly on GitHub without any technical setup.
+
+### Fields
+
+See [`data/working-groups/hcls.yaml`](data/working-groups/hcls.yaml) as a reference example. The available fields are:
+
+| Field | Required | Description |
+|---|---|---|
+| `id` | yes | Unique identifier — lowercase, no spaces, matches the filename |
+| `order` | no | Display order on the site (lower number = appears first) |
+| `title` | yes | Full name shown on the site |
+| `acronym` | yes | Short label shown on the card |
+| `shortDescription` | yes | One-line summary shown on the card |
+| `longDescription` | yes | Full description shown when clicking on a group |
+| `committeeMembers` | yes | List of `name` + `institution` pairs |
+| `resources` | yes | List of `title` + `url` pairs (URL must start with `https://`) |
+| `status` | no | Set to `pending` for groups not yet active; omit for active groups |
+| `acknowledgements` | no | Free-text acknowledgements |
+
+### Editing an existing working group
+
+1. Open the corresponding file in `data/working-groups/` (e.g. `hcls.yaml`)
+2. Edit the fields you want to change
+3. Open a pull request — the site will rebuild automatically when the PR is merged to `main`
+
+### Adding a new working group
+
+1. Create a new `.yaml` file in `data/working-groups/` (e.g. `my-group.yaml`)
+2. Fill in all required fields: `id`, `title`, `acronym`, `shortDescription`, `longDescription`, `committeeMembers`, `resources`
+3. Open a pull request
+
+> **Note:** Every URL in `resources` must be a complete URL starting with `https://`. If a URL is invalid, the build will fail and the error message will tell you which file to fix.
+
+---
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install        # install dependencies
+npm run dev        # start dev server at http://localhost:3000
+npm run build      # production build (also validates all data files)
+npm run lint       # run ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Data files are read and validated at build time. If a YAML file has a missing required field or an invalid URL, `npm run build` will print an error pointing to the problem.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The site is a static export — `npm run build` produces a folder of plain HTML, CSS, and JavaScript files with no server required.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployment is fully automatic: a GitHub Actions workflow triggers on every commit to `main`, builds the static site, and publishes it.
