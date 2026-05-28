@@ -62,9 +62,10 @@ export default async function WorkingGroupPage({ params }: Props) {
                 <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary text-balance">
                   About this working group
                 </h2>
-                <p className="text-base text-text-secondary leading-[22px]">
-                  {group.longDescription}
-                </p>
+                <div
+                  className="prose prose-content max-w-none"
+                  dangerouslySetInnerHTML={{ __html: group.longDescription }}
+                />
               </div>
 
               {/* Joint steering committee */}
@@ -88,6 +89,19 @@ export default async function WorkingGroupPage({ params }: Props) {
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* Acknowledgements */}
+              {group.acknowledgements && (
+                <div className="flex flex-col gap-6 lg:max-w-[50%]">
+                  <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary text-balance">
+                    Acknowledgements
+                  </h2>
+                  <div
+                    className="prose prose-content max-w-none"
+                    dangerouslySetInnerHTML={{ __html: group.acknowledgements }}
+                  />
                 </div>
               )}
 

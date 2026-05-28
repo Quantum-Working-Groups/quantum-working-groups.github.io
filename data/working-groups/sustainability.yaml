@@ -21,6 +21,12 @@ committeeMembers:
     institution: "Open Quantum Institute"
   - name: "Corey O'Meara"
     institution: "E.ON"
+acknowledgements: |
+  Co-founded in 2024 by:
+  - PINQ2
+  - Université de Sherbrooke
+  - Hydro-Québec
+  - IBM
 resources:
   - title: COP report
     url: https://thequantuminsider.com/2025/11/21/guest-post-quantum-computing-takes-center-stage-at-cop30-with-new-sustainability-report/

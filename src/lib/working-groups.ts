@@ -2,14 +2,20 @@ import fs from "fs";
 import path from "path";
 import yaml from "js-yaml";
 import sanitizeHtml from "sanitize-html";
+import { marked } from "marked";
 import { WorkingGroupSchema, type WorkingGroup } from "./schema";
 
-const ALLOWED_TAGS = ["br", "strong", "em", "b", "i"];
+const ALLOWED_TAGS = [
+  "br", "strong", "em", "b", "i",
+  "p", "ul", "ol", "li", "a",
+  "h1", "h2", "h3", "h4", "h5", "h6",
+];
 
-function sanitize(html: string): string {
+function markdownToHtml(md: string): string {
+  const html = marked.parse(md) as string;
   return sanitizeHtml(html, {
     allowedTags: ALLOWED_TAGS,
-    allowedAttributes: {},
+    allowedAttributes: { a: ["href", "title"] },
   });
 }
 
@@ -21,7 +27,9 @@ export function getWorkingGroups(): WorkingGroup[] {
     const group = WorkingGroupSchema.parse(yaml.load(content));
     return {
       ...group,
-      shortDescription: sanitize(group.shortDescription),
+      shortDescription: markdownToHtml(group.shortDescription),
+      longDescription: markdownToHtml(group.longDescription),
+      acknowledgements: group.acknowledgements ? markdownToHtml(group.acknowledgements) : undefined,
     };
   });
   return groups.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
