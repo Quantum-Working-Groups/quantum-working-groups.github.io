@@ -20,6 +20,7 @@ export const WorkingGroupSchema = z.object({
   resources: z.array(ResourceSchema),
   status: z.enum(["active", "pending"]).optional(),
   acknowledgements: z.string().optional(),
+  order: z.number().optional().default(0),
 });
 
 export type WorkingGroup = z.infer<typeof WorkingGroupSchema>;

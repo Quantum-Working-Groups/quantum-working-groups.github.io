@@ -32,5 +32,9 @@ export function getWorkingGroups(): WorkingGroup[] {
       acknowledgements: group.acknowledgements ? markdownToHtml(group.acknowledgements) : undefined,
     };
   });
-  return groups.sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()));
+  return groups.sort((a, b) => {
+    const orderDiff = a.order - b.order;
+    if (orderDiff !== 0) return orderDiff;
+    return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+  });
 }

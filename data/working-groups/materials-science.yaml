@@ -1,4 +1,5 @@
 id: materials-science
+order: 2
 title: Materials Science Quantum Working Group
 acronym: MSWG
 shortDescription: Taking quantum-centric supercomputing from molecules to materials, from energies to properties.
