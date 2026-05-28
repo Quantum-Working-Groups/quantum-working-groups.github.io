@@ -24,11 +24,11 @@ committeeMembers:
   - name: "Hideaki Kawaguchi"
     institution: "University of Tokyo / Keio University"
   - name: "Sally Shrapnel"
-    institution: "Queensland Digital Health Centre (QDHeC)"
+    institution: "University of Queensland"
 resources:
   - title: "How quantum computing can enhance biomarker discovery"
     url: "https://www.sciencedirect.com/science/article/pii/S2666389925000844"
   - title: "Advancing single-cell omics and cell-based therapeutics with quantum computing"
     url: "https://www.nature.com/articles/s41580-025-00918-0"
   - title: How can quantum computing be applied in clinical trial design and optimization?
-    url: https://www.sciencedirect.com/science/article/pii/S2666389925000844
+    url: https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.037001
