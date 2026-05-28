@@ -1,10 +1,10 @@
 id: materials-science
-title: Materials Science Working Group
+title: Materials Science Quantum Working Group
 acronym: MSWG
 shortDescription: Taking quantum-centric supercomputing from molecules to materials, from energies to properties.
 longDescription: >
-  An international collaboration spanning academia, government labs, and industry, the Materials Science
-  Working Group is dedicated to identifying realistic materials science problems that are well-suited to
+  An international collaboration spanning academia, government labs, and industry, the Materials Science Quantum Working Group
+  is dedicated to identifying realistic materials science problems that are well-suited to
   exploration on near-term quantum hardware. Its efforts center on problem classes—such as correlated
   electrons and lattice Hamiltonians—that pose fundamental challenges for classical simulation methods.
   By producing shared analyses and peer-reviewed research, the working group aims to foster collective
