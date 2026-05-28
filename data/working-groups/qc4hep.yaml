@@ -24,4 +24,6 @@ committeeMembers:
     institution: "CERN"
   - name: "Voica Radescu"
     institution: "IBM"
-resources: []
+resources:
+  - title: "Quantum Computing for High-Energy Physics: State of the Art and Challenges"
+    url: https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.037001
