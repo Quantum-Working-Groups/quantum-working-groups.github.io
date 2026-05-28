@@ -12,7 +12,6 @@ export default function Home() {
       {/* Hero */}
       <section>
         <div className="max-w-page mx-auto flex flex-col items-center lg:flex-row p-[40px] lg:p-[80px] gap-[40px] lg:gap-[80px]">
-
           <div className="flex pointer-events-none lg:order-last lg:justify-end">
             <HeroDotGrid height={419} className="hidden lg:block" />
             <HeroDotGridStatic height={292} className="lg:hidden" />
@@ -23,9 +22,10 @@ export default function Home() {
               Quantum research for the real world
             </h1>
             <p className="text-base text-text-secondary leading-[24px]">
-              The Quantum Technical Working Groups are collaborative, independently run research initiatives that convene
-              experts from academia, industry, startups, and research institutions worldwide to better understand
-              how quantum computing can contribute to key areas of science and technology.
+              The Quantum Technical Working Groups are collaborative, independently run research
+              initiatives that convene experts from academia, industry, startups, and research
+              institutions worldwide to better understand how quantum computing can contribute to
+              key areas of science and technology.
             </p>
             <div className="flex justify-center lg:justify-start">
               <Link
@@ -34,7 +34,13 @@ export default function Home() {
               >
                 Learn more
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path
+                    d="M8 3v10M3 8l5 5 5-5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </Link>
             </div>

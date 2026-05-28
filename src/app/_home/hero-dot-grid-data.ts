@@ -80,16 +80,14 @@ const PARSED = KEYFRAMES.map(parseKeyframe);
 
 const CIRCLE_IDS = Array.from(PARSED[0].keys()).sort((a, b) => a - b);
 
-export const TRACKS: ReadonlyArray<{ id: number; cells: Cell[] }> = CIRCLE_IDS.map(
-  (id) => ({
-    id,
-    cells: PARSED.map((kf) => {
-      const cell = kf.get(id);
-      if (!cell) throw new Error(`Circle ${id} is missing from a keyframe`);
-      return cell;
-    }),
+export const TRACKS: ReadonlyArray<{ id: number; cells: Cell[] }> = CIRCLE_IDS.map((id) => ({
+  id,
+  cells: PARSED.map((kf) => {
+    const cell = kf.get(id);
+    if (!cell) throw new Error(`Circle ${id} is missing from a keyframe`);
+    return cell;
   }),
-);
+}));
 
 const allRows = TRACKS.flatMap((t) => t.cells.map((c) => c[0]));
 const allCols = TRACKS.flatMap((t) => t.cells.map((c) => c[1]));

@@ -10,18 +10,18 @@ All working group content lives in the `data/working-groups/` folder. Each file 
 
 See [`data/working-groups/hcls.yaml`](data/working-groups/hcls.yaml) as a reference example. The available fields are:
 
-| Field | Required | Description |
-|---|---|---|
-| `id` | yes | Unique identifier — lowercase, no spaces, matches the filename |
-| `order` | no | Display order on the site (lower number = appears first) |
-| `title` | yes | Full name shown on the site |
-| `acronym` | yes | Short label shown on the card |
-| `shortDescription` | yes | One-line summary shown on the card |
-| `longDescription` | yes | Full description shown when clicking on a group |
-| `committeeMembers` | yes | List of `name` + `institution` pairs |
-| `resources` | yes | List of `title` + `url` pairs (URL must start with `https://`) |
-| `status` | no | Set to `pending` for groups not yet active; omit for active groups |
-| `acknowledgements` | no | Free-text acknowledgements |
+| Field              | Required | Description                                                        |
+| ------------------ | -------- | ------------------------------------------------------------------ |
+| `id`               | yes      | Unique identifier — lowercase, no spaces, matches the filename     |
+| `order`            | no       | Display order on the site (lower number = appears first)           |
+| `title`            | yes      | Full name shown on the site                                        |
+| `acronym`          | yes      | Short label shown on the card                                      |
+| `shortDescription` | yes      | One-line summary shown on the card                                 |
+| `longDescription`  | yes      | Full description shown when clicking on a group                    |
+| `committeeMembers` | yes      | List of `name` + `institution` pairs                               |
+| `resources`        | yes      | List of `title` + `url` pairs (URL must start with `https://`)     |
+| `status`           | no       | Set to `pending` for groups not yet active; omit for active groups |
+| `acknowledgements` | no       | Free-text acknowledgements                                         |
 
 ### Editing an existing working group
 

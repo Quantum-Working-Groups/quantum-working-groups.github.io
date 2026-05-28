@@ -2,7 +2,7 @@ id: quantum-machine-learning
 order: 7
 title: "Quantum Machine Learning Working Group"
 acronym: QMLWG
-shortDescription: > 
+shortDescription: >
   Identifying the key questions in quantum machine learning and where quantum computing 
   may offer new capabilities for learning, modeling, and discovery.
 longDescription: >

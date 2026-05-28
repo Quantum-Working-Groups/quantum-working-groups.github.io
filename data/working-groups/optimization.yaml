@@ -2,7 +2,7 @@ id: optimization
 order: 5
 title: "Quantum Optimization Working Group"
 acronym: QOWG
-shortDescription: > 
+shortDescription: >
   Driving quantum optimization from theory to practice, this collaboration combines advanced 
   algorithms and systematic benchmarking towards demonstrating quantum advantage for real-world use cases.
 longDescription: >

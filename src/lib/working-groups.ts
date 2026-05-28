@@ -6,9 +6,22 @@ import { marked } from "marked";
 import { WorkingGroupSchema, type WorkingGroup } from "./schema";
 
 const ALLOWED_TAGS = [
-  "br", "strong", "em", "b", "i",
-  "p", "ul", "ol", "li", "a",
-  "h1", "h2", "h3", "h4", "h5", "h6",
+  "br",
+  "strong",
+  "em",
+  "b",
+  "i",
+  "p",
+  "ul",
+  "ol",
+  "li",
+  "a",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
 ];
 
 function markdownToHtml(md: string): string {

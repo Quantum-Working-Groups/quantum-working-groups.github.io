@@ -44,10 +44,10 @@ export default function RootLayout({
       className={`${plexSans.variable} ${plexMono.variable} ${plexSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-          <Nav />
-          <main className="flex-1 flex flex-col">{children}</main>
-          <Footer />
-        </body>
+        <Nav />
+        <main className="flex-1 flex flex-col">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

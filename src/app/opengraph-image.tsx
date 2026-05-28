@@ -12,65 +12,63 @@ export default async function Image() {
     fs.promises.readFile(
       path.resolve(
         process.cwd(),
-        "node_modules/@fontsource/ibm-plex-serif/files/ibm-plex-serif-latin-400-normal.woff"
-      )
+        "node_modules/@fontsource/ibm-plex-serif/files/ibm-plex-serif-latin-400-normal.woff",
+      ),
     ),
     fs.promises.readFile(
       path.resolve(
         process.cwd(),
-        "node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff"
-      )
+        "node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff",
+      ),
     ),
   ]);
 
   return new ImageResponse(
-    (
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#004144",
+        display: "flex",
+      }}
+    >
       <div
         style={{
           position: "relative",
-          width: "100%",
-          height: "100%",
-          backgroundColor: "#004144",
           display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          padding: "80px 96px",
+          height: "100%",
+          gap: 16,
         }}
       >
         <div
           style={{
-            position: "relative",
+            fontSize: 36,
+            color: "#ffffff",
+            fontFamily: "IBM Plex Sans",
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end",
-            padding: "80px 96px",
-            height: "100%",
-            gap: 16,
           }}
         >
-          <div
-            style={{
-              fontSize: 36,
-              color: "#ffffff",
-              fontFamily: "IBM Plex Sans",
-              display: "flex",
-            }}
-          >
-            Quantum Technical Working Groups
-          </div>
-          <div
-            style={{
-              fontSize: 90,
-              color: "#ffffff",
-              fontFamily: "IBM Plex Serif",
-              fontWeight: 400,
-              lineHeight: 1.1,
-              display: "flex",
-              textWrap: 'balance'
-            }}
-          >
-            Quantum research for the real world
-          </div>
+          Quantum Technical Working Groups
+        </div>
+        <div
+          style={{
+            fontSize: 90,
+            color: "#ffffff",
+            fontFamily: "IBM Plex Serif",
+            fontWeight: 400,
+            lineHeight: 1.1,
+            display: "flex",
+            textWrap: "balance",
+          }}
+        >
+          Quantum research for the real world
         </div>
       </div>
-    ),
+    </div>,
     {
       width: 1200,
       height: 630,
@@ -88,6 +86,6 @@ export default async function Image() {
           style: "normal",
         },
       ],
-    }
+    },
   );
 }
