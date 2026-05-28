@@ -18,6 +18,7 @@ export const WorkingGroupSchema = z.object({
   longDescription: z.string(),
   committeeMembers: z.array(CommitteeMemberSchema),
   resources: z.array(ResourceSchema),
+  status: z.enum(["active", "pending"]).optional(),
 });
 
 export type WorkingGroup = z.infer<typeof WorkingGroupSchema>;

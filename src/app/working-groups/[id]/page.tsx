@@ -31,7 +31,7 @@ export default async function WorkingGroupPage({ params }: Props) {
   const groups = getWorkingGroups();
   const group = groups.find((g) => g.id === id);
 
-  if (!group) notFound();
+  if (!group || group.status === "pending") notFound();
 
   return (
     <>
@@ -123,6 +123,6 @@ export default async function WorkingGroupPage({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const groups = getWorkingGroups();
+  const groups = getWorkingGroups().filter((g) => g.status !== "pending");
   return groups.map((g) => ({ id: g.id }));
 }
