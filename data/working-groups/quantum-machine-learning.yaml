@@ -8,10 +8,10 @@ shortDescription: >
 longDescription: >
   The Quantum Machine Learning working group brings together researchers to identify the scientific
   foundations and open questions that can guide the next phase of research at the intersection of quantum
-  computing and machine learning. The group investigates where quantum resources may be relevant in
-  learning problems, including learning from quantum data, constructing quantum-enhanced representations,
-  sampling from complex distributions, and using machine learning to improve and discover quantum algorithms, and to design 
-  better quantum experiments. A central goal is to connect these questions to applications by 
+  computing and machine learning. The group investigates foundational questions at the interface of quantum computing 
+  and machine learning, with a focus on learning from quantum data, identifying quantum representations and sampling 
+  primitives that may provide useful computational advantages, and using machine learning to improve and discover 
+  quantum algorithms. A central goal is to connect these questions to applications by 
   formulating well-definedtasks, meaningful baselines, and rigorous evaluation criteria.
 committeeMembers: []
 resources: []
