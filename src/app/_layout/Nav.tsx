@@ -7,7 +7,7 @@ export function Nav() {
       <div className="flex h-[80px] items-center justify-between px-8 max-w-page mx-auto">
         <Link
           href="/"
-          className="font-sans font-semibold text-sm tracking-[0.16px] text-black hover:opacity-70 transition-opacity"
+          className="font-serif font-semibold text-sm tracking-[0.16px] text-black hover:opacity-70 transition-opacity"
         >
           Quantum Technical Working Groups
         </Link>
