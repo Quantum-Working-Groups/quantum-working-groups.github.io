@@ -12,6 +12,6 @@ longDescription: >
   and machine learning, with a focus on learning from quantum data, identifying quantum representations and sampling 
   primitives that may provide useful computational advantages, and using machine learning to improve and discover 
   quantum algorithms. A central goal is to connect these questions to applications by 
-  formulating well-definedtasks, meaningful baselines, and rigorous evaluation criteria.
+  formulating well-defined tasks, meaningful baselines, and rigorous evaluation criteria.
 committeeMembers: []
 resources: []
