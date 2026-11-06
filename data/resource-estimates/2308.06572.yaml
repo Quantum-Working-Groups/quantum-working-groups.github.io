@@ -1,0 +1,12 @@
+reference: "2308.06572"
+year: 2023
+samples: "no"
+samples_notes: "'repeated squaring' is arithmetic; no measurement shots/samples."
+estimates:
+  - area: Cryptography
+    topic: Cryptography
+    problem: RSA-2048
+    qubits: 100000
+    gates: 1.0e+06
+    gate_type: Toffoli
+    comments: Requires sqrt(n) executions

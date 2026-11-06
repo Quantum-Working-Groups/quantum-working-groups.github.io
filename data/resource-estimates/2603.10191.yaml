@@ -1,0 +1,24 @@
+reference: https://arxiv.org/abs/2603.10191
+url: https://arxiv.org/abs/2603.10191
+year: 2026
+samples: "no"
+samples_notes: >-
+  Sampling is classical: MPS sampling and subgraph (Ssample) sampling for QAOA simulation;
+  "one-shot execution" is a runtime term, not a measurement-shot count.
+estimates:
+  - area: Optimization
+    topic: Warm-started QAOA + Local Search
+    problem: MAXCUT
+    qubits: 3000
+    gates: 2.997e+06
+    gate_type: T
+    comments: Assuming all-to-all connectivity, extrapolation from smaller simulations
+    number: 10000
+  - area: Optimization
+    topic: Warm-started QAOA + Local Search
+    problem: MAXCUT
+    qubits: 10000
+    gates: 9.99e+06
+    gate_type: T
+    comments: Assuming all-to-all connectivity, extrapolation from smaller simulations
+    number: 10000

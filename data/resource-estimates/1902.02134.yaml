@@ -1,0 +1,13 @@
+reference: "1902.02134"
+year: 2019
+samples: "no"
+samples_notes: >-
+  'sampling' = coherent alias sampling / subsampling (state prep), not measurement shots.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: FeMoco
+    qubits: 378
+    gates: 2.1e+13
+    gate_type: T
+    comments: QPE – RWSWT (LLDUC) orbitals

@@ -1,0 +1,26 @@
+reference: "1905.09749"
+year: 2019
+samples: "no"
+samples_notes: >-
+  Only a qualitative 'need to make repeated attempts'; no measurement shot/sample count.
+estimates:
+  - area: Cryptography
+    topic: Cryptography
+    problem: RSA-2048
+    qubits: 6000
+    gates: 3.0e+09
+    gate_type: Toffoli
+    comments: >-
+      The resource estimation for distillation given by some sources is tied to particular physical
+      implementations and therefore left out of this estimate. Table 1 is abstract circuit model
+      estimates. (2019 Formula in Table I)
+    number: 1
+  - area: Cryptography
+    topic: Cryptography
+    problem: ECC-224
+    qubits: 2000
+    gates: 8.5e+10
+    gate_type: Toffoli
+    comments: >-
+      ECC-224 provides about the same level of security as RSA-2048 (Roettler formula in Table
+      I)

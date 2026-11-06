@@ -1,0 +1,21 @@
+reference: "1805.03662"
+year: 2018
+samples: "no"
+samples_notes: >-
+  O(λ/ε) is the QPE query count (walk-operator applications within the circuit) = circuit
+  depth, not a measurement-shot count.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Condensed Matter Physics
+    problem: 2D 10 × 10 Fermi–Hubbard model
+    qubits: 236
+    gates: 1.0e+08
+    gate_type: T
+    comments: Ground State - Qubitized QPE
+  - area: Hamiltonian Simulation
+    topic: Materials
+    problem: Jellium
+    qubits: 100-1000
+    gates: 1.8e+07
+    gate_type: T
+    comments: 0.0016 Ha

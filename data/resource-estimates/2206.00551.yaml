@@ -1,0 +1,14 @@
+reference: "2206.00551"
+year: 2022
+samples: "yes"
+samples_notes: >-
+  QPE must be re-run n_rep∼1/η times; dedicated Appendix "Number of repetitions of QPE" on
+  how many times to repeat and measure.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: Ibrutinib
+    qubits: 2207
+    gates: 1.1e+10
+    gate_type: T
+    comments: QPE with sparse qubitization

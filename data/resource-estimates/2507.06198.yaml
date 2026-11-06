@@ -1,0 +1,16 @@
+reference: https://arxiv.org/pdf/2507.06198
+url: https://arxiv.org/pdf/2507.06198
+year: 2025
+samples: "yes"
+samples_notes: >-
+  Number of circuit repetitions for the Hadamard test scales as O(1/ε²) measurements.
+estimates:
+  - area: Differential Equations
+    topic: SDEs
+    problem: Fokker-Plank-Kolmogorov for quadratic systems(e.g. Navier-Stokes)
+    qubits: 316
+    gates: 1.0e+10
+    gate_type: T
+    comments: >-
+      Resource estimates (LCU+QSP) for hyperviscous flow (r=3), Re=1e6, Kolmogorov truncation
+      at k=1e4,  unpublished, arxiv contains theory

@@ -1,0 +1,7 @@
+reference: "2210.14109"
+year: 2022
+samples: "yes"
+samples_notes: >-
+  Explicitly runs QPE many times and samples from the distribution ("single shot" vs. running
+  phase estimation multiple times) to suppress error statistically.
+estimates: []

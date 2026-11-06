@@ -1,0 +1,14 @@
+reference: "2204.11890"
+year: 2022
+samples: "yes"
+samples_notes: >-
+  QPE must be repeated O(1/p0) times (p0 = ground-state overlap) to read out the energy with
+  high probability.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Materials
+    problem: Li ion batteries
+    qubits: 2375 – 6652
+    gates: 5.0e+12
+    gate_type: Toffoli
+    comments: 156 electrons – e ~ 0.014eV

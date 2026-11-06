@@ -1,0 +1,15 @@
+reference: https://arxiv.org/abs/2510.10967
+url: https://arxiv.org/abs/2510.10967
+year: 2025
+samples: "no"
+samples_notes: >-
+  [borderline] "per-shot"/~4 retries are fault-tolerant execution retries for success probability;
+  the quantified sampling (>10^23 trials) is classical DQI trials, not measurement-shot statistics.
+estimates:
+  - area: Optimization
+    topic: Decoded Quantum Interferometry
+    problem: Optimal Polynomial Intersection
+    qubits: 1885
+    gates: 5.72e+06
+    gate_type: Toffoli
+    number: 10

@@ -1,0 +1,23 @@
+reference: "2306.08585"
+year: 2023
+samples: "no"
+samples_notes: >-
+  '13 repetitions of the group-of-16 operation' is the circuit structure of the ECC attack,
+  not measurement shots.
+estimates:
+  - area: Cryptography
+    topic: Cryptography
+    problem: ECC-256
+    qubits: 3000
+    gates: 1.1e+08
+    gate_type: T
+    location: Figure 2
+    comments: Guesstimating from the figure
+  - area: Cryptography
+    topic: Cryptography
+    problem: ECC-256
+    qubits: 50000
+    gates: 5.0e+07
+    gate_type: T
+    location: Figure 2
+    comments: Guesstimating from the figure

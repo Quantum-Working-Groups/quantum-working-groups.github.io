@@ -1,0 +1,14 @@
+reference: "2110.12071"
+year: 2021
+samples: "yes"
+samples_notes: >-
+  Draws Csample=⌈(2A/(η/2−ε))² ln(1/ϑ)⌉ circuit samples (~O(η⁻²)), each run with a Hadamard
+  test and measured.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: FeMoco
+    qubits: 193
+    gates: 5.0e+11
+    gate_type: Toffoli
+    comments: QPE - 0.0016 Ha

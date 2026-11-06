@@ -1,0 +1,33 @@
+reference: "2001.09580"
+year: 2020
+samples: "no"
+samples_notes: "'repeatedly divides' is the EEA algorithm; no measurement shots/samples."
+estimates:
+  - area: Cryptography
+    topic: Cryptography
+    problem: ECC-256
+    qubits: 2124
+    gates: 7.4e+09
+    gate_type: T
+    comments: Low-Width Optimization
+  - area: Cryptography
+    topic: Cryptography
+    problem: ECC-256
+    qubits: 2619
+    gates: 2.3e+09
+    gate_type: T
+    comments: Low T-count optimization
+  - area: Cryptography
+    topic: Cryptography
+    problem: ECC-521
+    qubits: 4258
+    gates: 6.36e+10
+    gate_type: T
+    comments: Low-width optimization
+  - area: Cryptography
+    topic: Cryptography
+    problem: ECC-521
+    qubits: 5273
+    gates: 1.7e+10
+    gate_type: T
+    comments: Low T-count optimization

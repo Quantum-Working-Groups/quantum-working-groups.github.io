@@ -1,0 +1,14 @@
+reference: "2009.12472"
+year: 2020
+samples: "yes"
+samples_notes: >-
+  Number of measurement repetitions (samples) in the tomography scales as O(1/ε²) to reach
+  energy error ε.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: Chromium dimer
+    qubits: 1300
+    gates: 1.0e+10
+    gate_type: Toffoli
+    comments: QPE with Trotter oracles

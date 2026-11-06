@@ -1,0 +1,30 @@
+reference: "2105.12767"
+year: 2021
+samples: "no"
+samples_notes: >-
+  'sampling' = QPE eigenbasis / alias / k-point sampling and a state-prep repetition count;
+  no measurement-shot budget.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: Lithium-ion battery molecules
+    qubits: 3000
+    gates: 1.0e+12
+    gate_type: T
+    comments: QPE
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: ethylene carbonate
+    qubits: 1701
+    gates: 6.6e+10
+    gate_type: Toffoli
+    location: Table VII
+    comments: Qubitization; Plane wave basis
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: LiPF_6
+    qubits: 1758
+    gates: 8.0e+10
+    gate_type: Toffoli
+    location: Table VII
+    comments: Qubitization; Plane wave basis

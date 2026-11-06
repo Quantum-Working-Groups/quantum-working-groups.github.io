@@ -1,0 +1,28 @@
+reference: "2303.14118"
+year: 2023
+samples: "yes"
+samples_notes: >-
+  Gives sampling complexity and the number of ASP/QPE executions needed (∝1/γ²); the procedure
+  "must be repeated for every sample".
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemical Dynamics
+    problem: Water
+    qubits: 1360
+    gates: 4.42e+15
+    gate_type: Toffoli
+    comments: Specific system properties
+  - area: Hamiltonian Simulation
+    topic: Chemical Dynamics
+    problem: Ammonia
+    qubits: 1597
+    gates: 5.49e+15
+    gate_type: Toffoli
+    comments: Specific system properties
+  - area: Hamiltonian Simulation
+    topic: Chemical Dynamics
+    problem: p-Benzyne
+    qubits: 5881
+    gates: 3.49e+18
+    gate_type: Toffoli
+    comments: Specific System Properties

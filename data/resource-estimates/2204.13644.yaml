@@ -1,0 +1,26 @@
+reference: "2204.13644"
+year: 2022
+samples: "no"
+samples_notes: No measurement shot/sample count.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Condensed Matter Physics
+    problem: 2D 10 × 10 Fermi–Hubbard model
+    qubits: 200
+    gates: 460000
+    gate_type: T
+    comments: Dynamics - 4th order Trotter.  e ~ 1e-2
+  - area: Hamiltonian Simulation
+    topic: Condensed Matter Physics
+    problem: 2D NN TFIM Dynamics
+    qubits: 100
+    gates: 170000
+    gate_type: T
+    comments: Dynamics - 4th order Trotter.  e ~ 1e-2
+  - area: Hamiltonian Simulation
+    topic: Condensed Matter Physics
+    problem: 2D 1/r2 TFIM Dynamics
+    qubits: 100
+    gates: 1.5e+07
+    gate_type: T
+    comments: Dynamics - 4th order Trotter. e ~ 1e-2

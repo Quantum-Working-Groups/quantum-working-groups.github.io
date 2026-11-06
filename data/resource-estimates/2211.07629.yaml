@@ -1,0 +1,13 @@
+reference: "2211.07629"
+year: 2022
+samples: "no"
+samples_notes: "'samples' refers only to Azure QRE code-sample notebooks, not measurement
+  shots."
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Condensed Matter Physics
+    problem: 2D 100-spin transverse-field Ising model (TFIM)
+    qubits: 230
+    gates: 2.4e+06
+    gate_type: T
+    comments: Dynamics - 4th order Trotter. e ~ 1e-3

@@ -1,0 +1,14 @@
+reference: "1605.03590"
+year: 2016
+samples: "no"
+samples_notes: >-
+  Sample counts are classical: 10^8 Monte-Carlo samples/class for a Trotter-error bound, and
+  10^12 "experiments" is a rejected statistical-sampling alternative to QPE.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: FeMoco
+    qubits: 135
+    gates: 3.5e+15
+    gate_type: T
+    comments: QPE - Nesting operations – 0.1 mHa

@@ -1,0 +1,13 @@
+reference: "2012.09238"
+year: 2020
+samples: "no"
+samples_notes: >-
+  No mention of shots/samples/measurement repetitions; reports qubit/gate counts only.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Condensed Matter Physics
+    problem: 2D 10 × 10 Fermi–Hubbard model
+    qubits: 250
+    gates: 5.0e+06
+    gate_type: T
+    comments: Ground State - Trotterized QPE

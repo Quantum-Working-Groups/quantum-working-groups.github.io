@@ -1,0 +1,14 @@
+reference: "2202.01244"
+year: 2022
+samples: "no"
+samples_notes: >-
+  O(λ/ε) repeated applications of the qubitized walk operator = query complexity within the
+  circuit, not measurement shots.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: Cytochrome P450
+    qubits: 1434
+    gates: 7.8e+09
+    gate_type: Toffoli
+    comments: QPE

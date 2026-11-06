@@ -1,0 +1,21 @@
+reference: "2007.14460"
+year: 2020
+samples: "yes"
+samples_notes: >-
+  States the number of measurement repetitions required to estimate energies to ~1 mHartree
+  is "enormous" (measurement-shot overhead).
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: FeMoco
+    qubits: 3600
+    gates: 2.3e+10
+    gate_type: Toffoli
+    comments: QPE - 1 mHa – 54 orbitals for the FeMoco active site
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: Ruthenium catalyst
+    qubits: 4000
+    gates: 3.0e+10
+    gate_type: Toffoli
+    comments: QPE - 1mHa error

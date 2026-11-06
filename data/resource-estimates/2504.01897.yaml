@@ -1,0 +1,16 @@
+reference: https://arxiv.org/abs/2504.01897
+url: https://arxiv.org/abs/2504.01897
+year: 2025
+samples: "no"
+samples_notes: >-
+  'repetitions' = QAOA circuit layers; 'samples' = runtime-distribution samples; no measurement-shot
+  count.
+estimates:
+  - area: Optimization
+    topic: QAOA + AA
+    problem: 8-SAT
+    qubits: 32000
+    gates: 2.0e+12
+    gate_type: T
+    comments: Assuming all-to-all connectivity, extrapolation from smaller simulations
+    number: 10

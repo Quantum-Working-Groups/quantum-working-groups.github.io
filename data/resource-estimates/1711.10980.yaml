@@ -1,0 +1,28 @@
+reference: "1711.10980"
+year: 2017
+samples: "no"
+samples_notes: >-
+  Only 'sample output circuits' (code) and an incidental 'randomly sampled eigenstate'; no
+  measurement-shot count.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Condensed Matter Physics
+    problem: Spin Systems on Graphs (1D NN)
+    qubits: 100
+    gates: 1.0e+12
+    gate_type: T
+    comments: Combine Figure 1 and 2 for n=100 & product forumula (PF)
+  - area: Hamiltonian Simulation
+    topic: Condensed Matter Physics
+    problem: Spin Systems on Graphs (1D NN)
+    qubits: 120
+    gates: 2.0e+10
+    gate_type: T
+    comments: Combine Figure 1 and 2 for n=100 & quantum signal processing (QSP)
+  - area: Hamiltonian Simulation
+    topic: Condensed Matter Physics
+    problem: Spin Systems on Graphs (1D NN)
+    qubits: 250
+    gates: 2.0e+11
+    gate_type: T
+    comments: Combine Figure 1 and 2 for n=100 & Taylor series (TS)

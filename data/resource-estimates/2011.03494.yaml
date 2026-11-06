@@ -1,0 +1,14 @@
+reference: "2011.03494"
+year: 2020
+samples: "no"
+samples_notes: >-
+  ⌈πλ/2ε⌉ repetitions of the LCU step are operator applications within QPE (feed the Toffoli
+  count), not measurement shots.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Chemistry
+    problem: FeMoco
+    qubits: 2196
+    gates: 3.2e+10
+    gate_type: Toffoli
+    comments: QPE

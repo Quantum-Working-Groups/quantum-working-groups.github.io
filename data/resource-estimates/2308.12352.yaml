@@ -1,0 +1,23 @@
+reference: "2308.12352"
+year: 2023
+samples: "yes"
+samples_notes: >-
+  State-prep + evolution + measurement repeated Ns times; explicitly "shot-noise limited"
+  estimation of the observable.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Materials
+    problem: Fusion
+    qubits: 1749
+    gates: 5.6e+14
+    gate_type: Toffoli
+    location: Table IV
+    comments: One particular stopping power design; QSP
+  - area: Hamiltonian Simulation
+    topic: Materials
+    problem: Fusion
+    qubits: 2666
+    gates: 1.1e+13
+    gate_type: Toffoli
+    location: Table IV
+    comments: One particular stopping power design; product formula

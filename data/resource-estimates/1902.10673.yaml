@@ -1,0 +1,7 @@
+reference: "1902.10673"
+year: 2019
+samples: "no"
+samples_notes: >-
+  The 'repetitions' r is the Trotter step count feeding the T-cost (circuit depth), not measurement
+  shots.
+estimates: []
