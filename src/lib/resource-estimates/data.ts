@@ -210,12 +210,22 @@ function axisRange(values: number[], floor: number): [number, number] {
 }
 
 export function getChartData(): ChartData {
-  const { points, skipped } = loadPoints();
+  const { points: all, skipped } = loadPoints();
+  const { maxGates } = CHART;
+  const points = maxGates === undefined ? all : all.filter((p) => p.gates <= maxGates);
+  for (const p of all) {
+    if (maxGates !== undefined && p.gates > maxGates)
+      skipped.push(
+        `${p.reference}: ${p.problemText} (${p.gates.toExponential(1)} operations, above the chart's range)`,
+      );
+  }
+  const xRange = axisRange(
+    points.map((p) => p.gates),
+    CHART.region.minGates,
+  );
+  if (maxGates !== undefined) xRange[1] = Math.ceil(Math.log10(maxGates));
   const ranges = {
-    xRange: axisRange(
-      points.map((p) => p.gates),
-      CHART.region.minGates,
-    ),
+    xRange,
     yRange: axisRange(
       points.map((p) => p.qubits),
       CHART.region.minQubits,
