@@ -181,6 +181,7 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
               </p>
               <p className="mt-1 tabular-nums">
                 {tip.p.qubitsText} qubits · {sci(tip.p.gates)} {tip.p.gateType}
+                {tip.p.converted && ` (converted from ${sci(tip.p.reportedGates)} Toffoli)`}
               </p>
               <p className="text-text-secondary">
                 {tip.p.reference} ({tip.p.year})

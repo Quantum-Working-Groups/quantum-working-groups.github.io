@@ -9,7 +9,7 @@ import path from "path";
 import yaml from "js-yaml";
 import { PaperSchema } from "./schema";
 import { arxivId, idFromNumber, parseQuantity, referenceUrl } from "./parse";
-import { AREAS, CHART, UNCONFIGURED_COLOR, type AreaConfig } from "./config";
+import { AREAS, CHART, T_GATES_PER_TOFFOLI, UNCONFIGURED_COLOR, type AreaConfig } from "./config";
 import { cloudPolygons, type Polygon } from "./clouds";
 import { latexToHtml, latexToText } from "./latex";
 
@@ -19,8 +19,12 @@ export interface Point {
   problem: string;
   qubits: number;
   qubitsText: string;
+  /** Operation count in T gates. Toffoli counts are multiplied by `T_GATES_PER_TOFFOLI`. */
   gates: number;
   gateType: string;
+  /** True if `gates` was converted from the Toffoli count in `reportedGates`. */
+  converted: boolean;
+  reportedGates: number;
   reference: string;
   url: string | null;
   year: number;
@@ -104,14 +108,17 @@ export function loadPoints(): { points: Point[]; skipped: string[] } {
         skipped.push(`${shownRef}: ${latexToText(est.problem)} (marked include: false)`);
         return;
       }
+      const converted = est.gate_type === "Toffoli";
       points.push({
         area: est.area,
         topic: est.topic ?? "",
         problem: est.problem,
         qubits: q[0],
         qubitsText: q[1],
-        gates: g[0],
-        gateType: est.gate_type,
+        gates: converted ? g[0] * T_GATES_PER_TOFFOLI : g[0],
+        gateType: converted ? "T" : est.gate_type,
+        converted,
+        reportedGates: g[0],
         reference: shownRef,
         url,
         year: doc.year,

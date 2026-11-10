@@ -1,4 +1,4 @@
-import { REPORT_ISSUE_URL } from "@/lib/resource-estimates/config";
+import { REPORT_ISSUE_URL, T_GATES_PER_TOFFOLI } from "@/lib/resource-estimates/config";
 import type { ChartData, Point } from "@/lib/resource-estimates/data";
 
 export function EstimatesTable({ points, areas }: { points: Point[]; areas: ChartData["areas"] }) {
@@ -53,7 +53,9 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
                 <td className="py-2 pr-4" dangerouslySetInnerHTML={{ __html: p.problemHtml }} />
                 <td className="py-2 pr-4 tabular-nums whitespace-nowrap">{p.qubitsText}</td>
                 <td className="py-2 pr-4 tabular-nums whitespace-nowrap">
-                  {p.gates.toExponential(1)} {p.gateType}
+                  {p.gates.toExponential(1)}
+                  {p.converted && "*"}
+                  {p.gateType !== "T" && <span className="ml-1">{p.gateType}</span>}
                 </td>
                 <td className="py-2 pr-4 tabular-nums">{p.year}</td>
                 <td className="py-2 pr-4">
@@ -75,6 +77,12 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
           </tbody>
         </table>
       </div>
+      {rows.some((p) => p.converted) && (
+        <p className="mt-10 text-sm text-text-secondary">
+          * Operations counts marked with an asterisk have been converted from reported Toffoli to T
+          gates ({T_GATES_PER_TOFFOLI} T gates per Toffoli gate) for chart standardization.
+        </p>
+      )}
     </div>
   );
 }

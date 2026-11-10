@@ -18,6 +18,9 @@ export interface AreaConfig {
   cloudOpacity?: number;
 }
 
+/** Toffoli gates are converted to T gates at this ratio so all estimates share one unit. */
+export const T_GATES_PER_TOFFOLI = 7;
+
 export const REPORT_ISSUE_URL =
   "https://github.com/Quantum-Working-Groups/quantum-working-groups.github.io/issues/new?template=resource-estimates-bug.yml";
 
