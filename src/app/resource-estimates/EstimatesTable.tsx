@@ -34,7 +34,7 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
                   />
                   {byArea.get(p.area)?.label ?? p.area}
                 </td>
-                <td className="py-2 pr-4">{p.problem}</td>
+                <td className="py-2 pr-4" dangerouslySetInnerHTML={{ __html: p.problemHtml }} />
                 <td className="py-2 pr-4 tabular-nums whitespace-nowrap">{p.qubitsText}</td>
                 <td className="py-2 pr-4 tabular-nums whitespace-nowrap">
                   {p.gates.toExponential(1)} {p.gateType}

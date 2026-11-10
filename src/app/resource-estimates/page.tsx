@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import "katex/dist/katex.min.css";
 import { DetailsHeroBackground } from "@/app/working-groups/[id]/DetailsHeroBackground";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { getChartData } from "@/lib/resource-estimates/data";

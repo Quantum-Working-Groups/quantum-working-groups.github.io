@@ -13,13 +13,13 @@ const H = 560;
 const M = { top: 16, right: 24, bottom: 56, left: 72 };
 const PW = W - M.left - M.right;
 const PH = H - M.top - M.bottom;
-const [X0, X1] = CHART.xRange;
-const [Y0, Y1] = CHART.yRange;
 // Rounded because Math.log10 can differ in the last digits between Node and the browser,
 // which makes the server-rendered SVG attributes fail to match on hydration.
 const round = (v: number) => Math.round(v * 100) / 100;
-const sx = (log: number) => round(M.left + ((log - X0) / (X1 - X0)) * PW);
-const sy = (log: number) => round(M.top + PH - ((log - Y0) / (Y1 - Y0)) * PH);
+const makeScales = ([x0, x1]: [number, number], [y0, y1]: [number, number]) => ({
+  sx: (log: number) => round(M.left + ((log - x0) / (x1 - x0)) * PW),
+  sy: (log: number) => round(M.top + PH - ((log - y0) / (y1 - y0)) * PH),
+});
 
 function hexToRgba(hex: string, a: number) {
   const n = parseInt(hex.slice(1), 16);
@@ -89,7 +89,10 @@ function Superscript({ exp }: { exp: number }) {
 }
 
 export function AlgorithmSpace({ data }: { data: ChartData }) {
-  const { points, areas, years, clouds } = data;
+  const { points, areas, years, clouds, xRange, yRange } = data;
+  const [X0, X1] = xRange;
+  const [Y0, Y1] = yRange;
+  const { sx, sy } = useMemo(() => makeScales(xRange, yRange), [xRange, yRange]);
   const [hidden, setHidden] = useState<Set<string>>(new Set());
   // slider index: years.length means "all years"
   const [yearIdx, setYearIdx] = useState(years.length);
@@ -297,7 +300,7 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
                 const y = sy(Math.log10(p.qubits));
                 const isNew = year !== null && p.year === year;
                 const key = `${p.reference}-${p.problem}-${i}`;
-                const label = `${p.problem}: ${p.qubitsText} qubits, ${sci(p.gates)} ${p.gateType} gates, ${p.reference} (${p.year})`;
+                const label = `${p.problemText}: ${p.qubitsText} qubits, ${sci(p.gates)} ${p.gateType} gates, ${p.reference} (${p.year})`;
                 const show = () => setHover({ p, x, y, key });
                 const hide = () => setHover((h) => (h?.key === key ? null : h));
                 const body = (
@@ -368,7 +371,10 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
                 transform: `translate(${tip.x / W > 0.6 ? "calc(-100% - 14px)" : "14px"}, -50%)`,
               }}
             >
-              <p className="font-semibold">{tip.p.problem}</p>
+              <p
+                className="font-semibold"
+                dangerouslySetInnerHTML={{ __html: tip.p.problemHtml }}
+              />
               <p className="text-text-secondary">
                 {byArea.get(tip.p.area)?.label}
                 {tip.p.topic && tip.p.topic !== tip.p.area ? ` · ${tip.p.topic}` : ""}
@@ -379,8 +385,11 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
               <p className="text-text-secondary">
                 {tip.p.reference} ({tip.p.year})
               </p>
-              {tip.p.comments && (
-                <p className="mt-1 italic text-text-secondary">{tip.p.comments}</p>
+              {tip.p.commentsHtml && (
+                <p
+                  className="mt-1 italic text-text-secondary"
+                  dangerouslySetInnerHTML={{ __html: tip.p.commentsHtml }}
+                />
               )}
             </div>
           )}

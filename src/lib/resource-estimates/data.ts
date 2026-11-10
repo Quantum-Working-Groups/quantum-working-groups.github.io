@@ -11,6 +11,7 @@ import { PaperSchema } from "./schema";
 import { arxivId, idFromNumber, parseQuantity, referenceUrl } from "./parse";
 import { AREAS, CHART, UNCONFIGURED_COLOR, type AreaConfig } from "./config";
 import { cloudPolygons, type Polygon } from "./clouds";
+import { latexToHtml, latexToText } from "./latex";
 
 export interface Point {
   area: string;
@@ -24,6 +25,10 @@ export interface Point {
   url: string | null;
   year: number;
   comments: string;
+  /** Plain text and KaTeX HTML versions of `problem` and `comments`. */
+  problemText: string;
+  problemHtml: string;
+  commentsHtml: string;
 }
 
 export interface Cloud {
@@ -37,6 +42,9 @@ export interface ChartData {
   skipped: string[];
   areas: (AreaConfig & { count: number })[];
   years: number[];
+  /** Axis bounds in log10 units, whole decades covering every point. */
+  xRange: [number, number];
+  yRange: [number, number];
   /** Clouds for "all years", then one entry per year in `years`. */
   clouds: { all: Cloud[]; byYear: Record<number, Cloud[]> };
 }
@@ -93,7 +101,7 @@ export function loadPoints(): { points: Point[]; skipped: string[] } {
         fail(file, `estimates/${i}/gates: ${JSON.stringify(est.gates)} is not a positive number`);
       const shownRef = est.location ? `${ref} (${est.location})` : ref;
       if (est.include === false) {
-        skipped.push(`${shownRef}: ${est.problem} (marked include: false)`);
+        skipped.push(`${shownRef}: ${latexToText(est.problem)} (marked include: false)`);
         return;
       }
       points.push({
@@ -108,13 +116,21 @@ export function loadPoints(): { points: Point[]; skipped: string[] } {
         url,
         year: doc.year,
         comments: est.comments ?? "",
+        problemText: latexToText(est.problem),
+        problemHtml: latexToHtml(est.problem),
+        commentsHtml: latexToHtml(est.comments ?? ""),
       });
     });
   }
   return { points, skipped };
 }
 
-function cloudsFor(points: Point[], areas: AreaConfig[], upTo?: number): Cloud[] {
+function cloudsFor(
+  points: Point[],
+  areas: AreaConfig[],
+  ranges: Pick<ChartData, "xRange" | "yRange">,
+  upTo?: number,
+): Cloud[] {
   return areas.map((a) => {
     const pts = points.filter((p) => p.area === a.match);
     return {
@@ -123,8 +139,8 @@ function cloudsFor(points: Point[], areas: AreaConfig[], upTo?: number): Cloud[]
         pts.map((p) => Math.log10(p.gates)),
         pts.map((p) => Math.log10(p.qubits)),
         {
-          xRange: CHART.xRange,
-          yRange: CHART.yRange,
+          xRange: ranges.xRange,
+          yRange: ranges.yRange,
           sigma: CHART.cloudSigma,
           level: CHART.cloudLevel,
           smooth: CHART.cloudSmooth,
@@ -172,9 +188,9 @@ function simplify(poly: [number, number][], tol: number): [number, number][] {
  * Shrink outlines for the page: simplify to ~0.25 px at the chart's drawn
  * size (invisible), then round to 1e-4 decades (~0.1 px).
  */
-function compact(clouds: Cloud[]): Cloud[] {
-  // the chart's plot area is ~860 px across ~10 decades; work in decades
-  const tol = (0.25 * (CHART.xRange[1] - CHART.xRange[0])) / 860;
+function compact(clouds: Cloud[], xSpan: number): Cloud[] {
+  // the chart's plot area is ~860 px wide; work in decades
+  const tol = (0.25 * xSpan) / 860;
   const r = (v: number) => Math.round(v * 1e4) / 1e4;
   return clouds.map((c) => ({
     ...c,
@@ -184,15 +200,27 @@ function compact(clouds: Cloud[]): Cloud[] {
   }));
 }
 
+const AXIS_PADDING = 0.25;
+
+/** Whole decades around the values; `floor` is a bound the range must also reach. */
+function axisRange(values: number[], floor: number): [number, number] {
+  const logs = values.map(Math.log10);
+  const low = Math.min(Math.min(...logs) - AXIS_PADDING, Math.log10(floor));
+  return [Math.floor(low), Math.ceil(Math.max(...logs) + AXIS_PADDING)];
+}
+
 export function getChartData(): ChartData {
-  const { points: all, skipped } = loadPoints();
-  const points = all.filter((p) => p.gates <= CHART.maxGates);
-  for (const p of all) {
-    if (p.gates > CHART.maxGates)
-      skipped.push(
-        `${p.reference}: ${p.problem} (${p.gates.toExponential(1)} gates, above the chart's range)`,
-      );
-  }
+  const { points, skipped } = loadPoints();
+  const ranges = {
+    xRange: axisRange(
+      points.map((p) => p.gates),
+      CHART.region.minGates,
+    ),
+    yRange: axisRange(
+      points.map((p) => p.qubits),
+      CHART.region.minQubits,
+    ),
+  };
   const known = new Set(AREAS.map((a) => a.match));
   const extra = [...new Set(points.map((p) => p.area))]
     .filter((a) => !known.has(a))
@@ -205,13 +233,15 @@ export function getChartData(): ChartData {
   const years = ys.length
     ? Array.from({ length: Math.max(...ys) - Math.min(...ys) + 1 }, (_, i) => Math.min(...ys) + i)
     : [];
+  const xSpan = ranges.xRange[1] - ranges.xRange[0];
   const byYear: Record<number, Cloud[]> = {};
-  for (const y of years) byYear[y] = compact(cloudsFor(points, areas, y));
+  for (const y of years) byYear[y] = compact(cloudsFor(points, areas, ranges, y), xSpan);
   return {
     points,
     skipped,
     areas,
     years,
-    clouds: { all: compact(cloudsFor(points, areas)), byYear },
+    ...ranges,
+    clouds: { all: compact(cloudsFor(points, areas, ranges), xSpan), byYear },
   };
 }

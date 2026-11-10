@@ -1,6 +1,6 @@
 /**
  * Chart settings. Ported from the algorithm_cloud project's config.toml.
- * Axis ranges are in log10 units.
+ * Axis ranges come from the data (see `getChartData`).
  */
 
 export type MarkerShape = "circle" | "triangle-up" | "square" | "triangle-right" | "diamond";
@@ -19,10 +19,6 @@ export interface AreaConfig {
 }
 
 export const CHART = {
-  xRange: [2, 12] as [number, number],
-  yRange: [1, 5.3] as [number, number],
-  /** Estimates with more gates than this are listed, not plotted. */
-  maxGates: 1e12,
   /** Cloud bump radius, as a fraction of each axis span. */
   cloudSigma: 0.045,
   /** Contour level (0-1) of the summed bump field; lower = bigger clouds. */
