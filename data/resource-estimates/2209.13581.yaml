@@ -1,0 +1,23 @@
+reference: "2209.13581"
+year: 2022
+samples: "yes"
+samples_notes: Amplitude estimation needs ln(1/δ²)/(2ε²) measurement repetitions.
+estimates:
+  - area: ML
+    problem: Topological data analysis
+    qubits: 100
+    gates: 150000000
+    gate_type: Toffoli
+    comments: >-
+      Computing Betti numbers, $k=4$; read off Fig. 2(a) at $n = 100$ (qubits = $n$ vertex qubits) —
+      figure reading accepted as verified by owner ruling (2026-11-06), precision about a factor of
+      1.3
+  - area: ML
+    problem: Topological data analysis
+    qubits: 10000
+    gates: 6000000000000000
+    gate_type: Toffoli
+    comments: >-
+      Computing Betti numbers, $k=32$; read off Fig. 2(d) at $n = 10^{4}$ (qubits = $n$ vertex
+      qubits) — figure reading accepted as verified by owner ruling (2026-11-06), precision about a
+      factor of 1.7

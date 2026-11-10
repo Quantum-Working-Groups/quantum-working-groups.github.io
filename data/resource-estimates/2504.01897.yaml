@@ -1,0 +1,17 @@
+reference: "2504.01897"
+url: https://arxiv.org/abs/2504.01897
+year: 2025
+samples: "no"
+samples_notes: >-
+  'repetitions' = QAOA circuit layers; 'samples' = runtime-distribution samples; no measurement-shot
+  count.
+estimates:
+  - area: Optimization
+    topic: QAOA + AA
+    problem: 8-SAT
+    qubits: ~28,300
+    gates: 218000000000
+    gate_type: Non-Clifford (T + Toffoli)
+    comments: >-
+      Assuming all-to-all connectivity, extrapolation from smaller simulations; quartic-speedup
+      crossover scenario; numbers taken from Stefan (owner ruling, 2026-11-09)

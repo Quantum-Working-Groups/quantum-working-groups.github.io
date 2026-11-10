@@ -1,0 +1,27 @@
+name: Resource estimates bug or data issue
+description: Suggest a change to the resource estimates chart or its data.
+labels: ["resource-estimates"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What needs to change?
+      options:
+        - Chart problem (display, timeline, legend)
+        - Wrong value in an existing estimate
+        - Missing estimate
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Say what is wrong and what you expect to see.
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Paper reference
+      description: arXiv link or ID, if the issue is about a specific estimate.

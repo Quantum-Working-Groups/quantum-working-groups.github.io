@@ -1,0 +1,15 @@
+reference: "2512.03758"
+url: https://arxiv.org/pdf/2512.03758
+year: 2025
+samples: "no"
+samples_notes: "'sampling' appears only in a cited reference title; no measurement-shot count in the work."
+estimates:
+  - area: Differential Equations
+    topic: Lattice Boltzmann equation
+    problem: 2D Lattice-Boltzmann CFD on a torus with $\mathrm{Re} \leq 250$
+    qubits: 110
+    gates: 56000000000
+    gate_type: T
+    comments: >-
+      D2Q9 model, periodic boundaries (torus), $\mathrm{Re} \leq 250$; numbers taken from Stefan
+      (owner ruling, 2026-11-10); empirical estimates (no convergence proofs)

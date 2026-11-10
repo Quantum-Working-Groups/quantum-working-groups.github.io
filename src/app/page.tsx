@@ -1,5 +1,6 @@
 import { getWorkingGroups } from "@/lib/working-groups";
 import { WorkingGroupGrid } from "./_home/WorkingGroupGrid";
+import { ResourceEstimatesSection } from "./_home/ResourceEstimatesSection";
 import { HeroDotGrid } from "./_home/HeroDotGrid";
 import { HeroDotGridStatic } from "./_home/HeroDotGridStatic";
 import Link from "next/link";
@@ -52,6 +53,7 @@ export default function Home() {
       <section id="working-groups" className="bg-white">
         <div className="px-10 py-20 max-w-page mx-auto">
           <WorkingGroupGrid groups={groups} />
+          <ResourceEstimatesSection />
         </div>
       </section>
     </>

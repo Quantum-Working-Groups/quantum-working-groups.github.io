@@ -1,0 +1,28 @@
+reference: "2302.05531"
+year: 2023
+samples: "no"
+samples_notes: >-
+  Ns is the number of classical ph-AFQMC Monte-Carlo samples (error ∝ Ns^-1/2); not quantum
+  measurement shots.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: Materials
+    problem: Lithium batteries ($\mathrm{LiNiO_2}$, $R\bar{3}m$)
+    qubits: 89162
+    gates: 78600000000000
+    gate_type: Toffoli
+    comments: SF LCU, $[2,2,2]$ k-mesh & particular system configuration
+  - area: Hamiltonian Simulation
+    topic: Materials
+    problem: Lithium batteries (C2/m complex)
+    qubits: 75178
+    gates: 1180000000000
+    gate_type: Toffoli
+    comments: DF LCU, $[2,2,1]$ k-mesh & particular system configuration
+  - area: Hamiltonian Simulation
+    topic: Materials
+    problem: Lithium batteries (P2/c complex)
+    qubits: 75834
+    gates: 972000000000
+    gate_type: Toffoli
+    comments: DF LCU, $[1,1,1]$ k-mesh & particular system configuration
