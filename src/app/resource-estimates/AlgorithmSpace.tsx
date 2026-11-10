@@ -195,12 +195,6 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
                   * Converted from {tip.p.reportedGates.toExponential(1)} Toffoli
                 </p>
               )}
-              {tip.p.commentsHtml && (
-                <p
-                  className="mt-2 italic text-text-secondary"
-                  dangerouslySetInnerHTML={{ __html: tip.p.commentsHtml }}
-                />
-              )}
             </div>
           )}
         </div>

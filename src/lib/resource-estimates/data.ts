@@ -28,11 +28,9 @@ export interface Point {
   reference: string;
   url: string | null;
   year: number;
-  comments: string;
-  /** Plain text and KaTeX HTML versions of `problem` and `comments`. */
+  /** Plain text and KaTeX HTML versions of `problem`. */
   problemText: string;
   problemHtml: string;
-  commentsHtml: string;
 }
 
 export interface Cloud {
@@ -122,10 +120,8 @@ export function loadPoints(): { points: Point[]; skipped: string[] } {
         reference: ref,
         url,
         year: doc.year,
-        comments: est.comments ?? "",
         problemText: latexToText(est.problem),
         problemHtml: latexToHtml(est.problem),
-        commentsHtml: latexToHtml(est.comments ?? ""),
       });
     });
   }
