@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { DetailsHeroBackground } from "@/app/working-groups/[id]/DetailsHeroBackground";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 import { getChartData } from "@/lib/resource-estimates/data";
 import { AlgorithmSpace } from "./AlgorithmSpace";
 
 export const metadata: Metadata = {
-  title: "Quantum algorithm resource estimates | Quantum Technical Working Groups",
+  title: "Estimating quantum resource requirements | Quantum Technical Working Groups",
   description:
-    "Published estimates of the logical qubits and non-Clifford gates needed to run quantum algorithms, grouped by application area.",
+    "Published estimates of the logical qubits and operations needed to run quantum algorithms, grouped by application area.",
 };
 
+const REPORT_ISSUE_URL =
+  "https://github.com/Quantum-Working-Groups/quantum-working-groups.github.io/issues/new?template=resource-estimates-bug.yml";
+
 export default function ResourceEstimatesPage() {
-  // Runs at build time: loads and validates the YAML, computes every cloud.
   const data = getChartData();
-  const rows = [...data.points].sort((a, b) => a.area.localeCompare(b.area) || a.gates - b.gates);
-  const label = new Map(data.areas.map((a) => [a.match, a.label]));
-  const color = new Map(data.areas.map((a) => [a.match, a.color]));
 
   return (
     <>
@@ -32,7 +31,7 @@ export default function ResourceEstimatesPage() {
             {" /"}
           </p>
           <h1 className="font-serif font-normal text-[48px] leading-[56px] text-white text-center text-balance">
-            Quantum algorithm resource estimates
+            Estimating quantum resource requirements
           </h1>
         </div>
       </section>
@@ -41,70 +40,19 @@ export default function ResourceEstimatesPage() {
         <div className="px-10 py-20 max-w-page mx-auto flex flex-col gap-16">
           <div className="flex flex-col gap-6 lg:max-w-[60%]">
             <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
-              Where the algorithms sit
+              Watch quantum algorithm exploration evolve
             </h2>
             <p className="text-base leading-[24px] text-text-secondary">
-              Each point is a published estimate of the logical qubits (width) and T or Toffoli
-              gates (circuit size) an algorithm needs for a concrete problem. Clouds group estimates
-              by application area. Hover a point for details, click it to open the paper, and step
-              through publication years to see how the landscape has moved.
+              Researchers are constantly looking to solve larger and more complex problems with
+              quantum. As more examples are published, they build a picture of the quantum resources
+              required to tackle these computational challenges. Compare resource estimates below to
+              learn how requirements have evolved over time and across application areas.
             </p>
           </div>
 
           <AlgorithmSpace data={data} />
 
-          {/* Data table: the same numbers without the chart */}
           <div className="flex flex-col gap-6">
-            <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
-              All {data.points.length} estimates
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm text-left">
-                <thead className="text-text-secondary border-b border-border-subtle">
-                  <tr>
-                    {["Area", "Problem", "Qubits", "Gates", "Year", "Reference"].map((h) => (
-                      <th key={h} scope="col" className="py-2 pr-4 font-semibold whitespace-nowrap">
-                        {h}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((p, i) => (
-                    <tr key={i} className="border-b border-border-subtle align-top">
-                      <td className="py-2 pr-4 whitespace-nowrap">
-                        <span
-                          className="inline-block size-2.5 rounded-[2px] mr-2 align-middle"
-                          style={{ background: color.get(p.area) }}
-                          aria-hidden
-                        />
-                        {label.get(p.area) ?? p.area}
-                      </td>
-                      <td className="py-2 pr-4">{p.problem}</td>
-                      <td className="py-2 pr-4 tabular-nums whitespace-nowrap">{p.qubitsText}</td>
-                      <td className="py-2 pr-4 tabular-nums whitespace-nowrap">
-                        {p.gates.toExponential(1)} {p.gateType}
-                      </td>
-                      <td className="py-2 pr-4 tabular-nums">{p.year}</td>
-                      <td className="py-2 pr-4">
-                        {p.url ? (
-                          <a
-                            href={p.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:underline"
-                          >
-                            {p.reference}
-                          </a>
-                        ) : (
-                          p.reference
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
             {data.skipped.length > 0 && (
               <details className="text-sm text-text-secondary">
                 <summary className="cursor-pointer">
@@ -118,17 +66,18 @@ export default function ResourceEstimatesPage() {
                 </ul>
               </details>
             )}
+            <div>
+              <a
+                href={REPORT_ISSUE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-teal-70 px-6 py-3 text-sm tracking-[0.16px] text-teal-70 hover:bg-layer-01 transition-colors"
+              >
+                Report a bug or data issue
+                <GithubIcon size={16} />
+              </a>
+            </div>
           </div>
-
-          <a
-            href="https://github.com/Quantum-Working-Groups/quantum-working-groups.github.io/tree/main/data/resource-estimates"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-base text-text-primary hover:underline"
-          >
-            Add or correct an estimate on GitHub
-            <ArrowRight size={16} className="shrink-0" />
-          </a>
         </div>
       </section>
     </>

@@ -5,6 +5,7 @@ import { Pause, Play } from "lucide-react";
 import type { ChartData, Point } from "@/lib/resource-estimates/data";
 import type { MarkerShape } from "@/lib/resource-estimates/config";
 import { CHART } from "@/lib/resource-estimates/config";
+import { EstimatesTable } from "./EstimatesTable";
 
 // Chart geometry in SVG user units; the SVG scales to its container.
 const W = 960;
@@ -421,6 +422,8 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
           })}
         </ul>
       </div>
+
+      <EstimatesTable points={shown} areas={areas} />
     </div>
   );
 }

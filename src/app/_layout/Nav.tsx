@@ -13,6 +13,12 @@ export function Nav() {
         </Link>
         <div className="flex items-center gap-2">
           <Link
+            href="/#working-groups"
+            className="px-3 py-2 text-sm text-text-primary hover:bg-gray-100 rounded-full transition-colors"
+          >
+            Working groups
+          </Link>
+          <Link
             href="/resource-estimates"
             className="px-3 py-2 text-sm text-text-primary hover:bg-gray-100 rounded-full transition-colors"
           >
