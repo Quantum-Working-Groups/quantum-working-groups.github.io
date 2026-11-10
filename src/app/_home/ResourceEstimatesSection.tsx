@@ -8,7 +8,7 @@ export function ResourceEstimatesSection() {
 
   return (
     <div className="mt-0 grid items-center gap-10 border border-t-0 border-layer-03 p-8 lg:grid-cols-2 lg:p-16">
-      <div className="border border-layer-03 bg-white p-2">
+      <div className="bg-white p-2 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
         <ChartPlot
           data={data}
           clouds={data.clouds.all}
@@ -20,12 +20,12 @@ export function ResourceEstimatesSection() {
       </div>
       <div className="flex flex-col items-start gap-6">
         <h2 className="font-sans font-semibold text-[24px] leading-[32px] text-text-primary text-balance">
-          Estimating quantum resource requirements
+          Charting quantum resource estimates
         </h2>
         <p className="text-base leading-[24px] text-text-secondary">
-          As new quantum algorithms and applications are discovered, we develop a better sense of
-          the quantum compute resources required to tackle them. Explore how published qubit and
-          operation estimations have evolved over time and across research areas.
+          Researchers are uncovering algorithms where quantum will provide a significant speedup.
+          But how big a quantum computer will you need to run them? See how algorithm development is
+          charting the landscape of quantum&apos;s capabilities.
         </p>
         <Link
           href="/resource-estimates"
