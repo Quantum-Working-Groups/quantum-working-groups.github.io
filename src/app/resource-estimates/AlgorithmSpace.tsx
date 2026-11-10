@@ -201,7 +201,7 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
             viewBox={`0 0 ${W} ${H}`}
             className="w-full h-auto font-sans"
             role="group"
-            aria-label="Logical qubits against circuit size for published quantum algorithm resource estimates, grouped into clouds by algorithm area. Each point links to its paper; the table below lists the same data."
+            aria-label="Qubits against operations for published quantum algorithm resource estimates, grouped into clouds by algorithm area. Each point links to its paper; the table below lists the same data."
           >
             <defs>
               <clipPath id={clipId}>
@@ -253,7 +253,7 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
               ))}
             </g>
             <text x={M.left + PW / 2} y={H - 8} textAnchor="middle" fontSize={16} fill="#161616">
-              Circuit size (gates)
+              Operations
             </text>
             <text
               transform={`translate(18 ${M.top + PH / 2}) rotate(-90)`}
@@ -261,7 +261,7 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
               fontSize={16}
               fill="#161616"
             >
-              Width (logical qubits)
+              Qubits
             </text>
 
             <g clipPath={`url(#${clipId})`}>

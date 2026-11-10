@@ -8,8 +8,8 @@ export function ResourceEstimatesSection() {
       <Image
         src="/resource-estimates-preview.png"
         alt="Chart of published quantum resource estimates by application area"
-        width={990}
-        height={590}
+        width={978}
+        height={571}
         className="h-auto w-full shadow-nav"
       />
       <div className="flex flex-col items-start gap-6">
