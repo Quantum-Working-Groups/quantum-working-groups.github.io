@@ -21,9 +21,9 @@ export interface AreaConfig {
 export const CHART = {
   /**
    * Upper bound of the x axis, in operations (for example 1e12). Estimates above it are
-   * listed under the chart instead of plotted. Leave undefined to fit the axis to the data.
+   * listed under the chart instead of plotted. Set to undefined to fit the axis to the data.
    */
-  maxGates: undefined as number | undefined,
+  maxGates: 1e12 as number | undefined,
   /** Cloud bump radius, as a fraction of each axis span. */
   cloudSigma: 0.045,
   /** Contour level (0-1) of the summed bump field; lower = bigger clouds. */
