@@ -48,6 +48,20 @@ export default function ResourceEstimatesPage() {
           </div>
 
           <AlgorithmSpace data={data} />
+
+          {data.skipped.length > 0 && (
+            <details className="text-sm text-text-secondary">
+              <summary className="cursor-pointer">
+                {data.skipped.length} more estimate{data.skipped.length === 1 ? "" : "s"} not shown
+                on the chart
+              </summary>
+              <ul className="mt-2 list-disc pl-5 flex flex-col gap-1">
+                {data.skipped.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+            </details>
+          )}
         </div>
       </section>
     </>
