@@ -15,8 +15,11 @@ const PW = W - M.left - M.right;
 const PH = H - M.top - M.bottom;
 const [X0, X1] = CHART.xRange;
 const [Y0, Y1] = CHART.yRange;
-const sx = (log: number) => M.left + ((log - X0) / (X1 - X0)) * PW;
-const sy = (log: number) => M.top + PH - ((log - Y0) / (Y1 - Y0)) * PH;
+// Rounded because Math.log10 can differ in the last digits between Node and the browser,
+// which makes the server-rendered SVG attributes fail to match on hydration.
+const round = (v: number) => Math.round(v * 100) / 100;
+const sx = (log: number) => round(M.left + ((log - X0) / (X1 - X0)) * PW);
+const sy = (log: number) => round(M.top + PH - ((log - Y0) / (Y1 - Y0)) * PH);
 
 function hexToRgba(hex: string, a: number) {
   const n = parseInt(hex.slice(1), 16);
