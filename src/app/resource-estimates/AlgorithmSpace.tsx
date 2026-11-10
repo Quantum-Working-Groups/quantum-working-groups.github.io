@@ -164,31 +164,40 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
             <div
               id={tipId}
               role="tooltip"
-              className="pointer-events-none absolute z-10 w-max max-w-[320px] rounded-sm border border-border-subtle bg-white px-3 py-2 text-[13px] leading-[18px] text-text-primary shadow-lg"
+              className="pointer-events-none absolute z-10 w-max min-w-[220px] max-w-[320px] border-l-4 bg-white px-4 py-3 text-[13px] leading-[20px] text-text-primary shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
               style={{
+                borderLeftColor: byArea.get(tip.p.area)?.color,
                 left: `${(tip.x / W) * 100}%`,
                 top: `${(tip.y / H) * 100}%`,
                 transform: `translate(${tip.x / W > 0.6 ? "calc(-100% - 14px)" : "14px"}, -50%)`,
               }}
             >
               <p
-                className="font-semibold"
+                className="mb-3 text-sm font-semibold"
                 dangerouslySetInnerHTML={{ __html: tip.p.problemHtml }}
               />
-              <p className="text-text-secondary">
-                {byArea.get(tip.p.area)?.label}
-                {tip.p.topic && tip.p.topic !== tip.p.area ? ` · ${tip.p.topic}` : ""}
-              </p>
-              <p className="mt-1 tabular-nums">
-                {tip.p.qubitsText} qubits · {sci(tip.p.gates)} {tip.p.gateType}
-                {tip.p.converted && ` (converted from ${sci(tip.p.reportedGates)} Toffoli)`}
-              </p>
-              <p className="text-text-secondary">
-                {tip.p.reference} ({tip.p.year})
-              </p>
+              <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-0.5 tabular-nums">
+                <dt>Qubits</dt>
+                <dd className="text-right">{tip.p.qubitsText}</dd>
+                <dt>Operations</dt>
+                <dd className="text-right">
+                  {tip.p.gates.toExponential(1)}
+                  {tip.p.converted && "*"}
+                  {tip.p.gateType !== "T" && ` ${tip.p.gateType}`}
+                </dd>
+                <dt>Year</dt>
+                <dd className="text-right">{tip.p.year}</dd>
+                <dt>Reference</dt>
+                <dd className="text-right">{tip.p.reference}</dd>
+              </dl>
+              {tip.p.converted && (
+                <p className="mt-2 text-text-secondary">
+                  * Converted from {tip.p.reportedGates.toExponential(1)} Toffoli
+                </p>
+              )}
               {tip.p.commentsHtml && (
                 <p
-                  className="mt-1 italic text-text-secondary"
+                  className="mt-2 italic text-text-secondary"
                   dangerouslySetInnerHTML={{ __html: tip.p.commentsHtml }}
                 />
               )}
