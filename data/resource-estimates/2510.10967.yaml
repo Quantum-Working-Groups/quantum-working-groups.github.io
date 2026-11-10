@@ -1,4 +1,4 @@
-reference: https://arxiv.org/abs/2510.10967
+reference: "2510.10967"
 url: https://arxiv.org/abs/2510.10967
 year: 2025
 samples: "no"
@@ -10,6 +10,5 @@ estimates:
     topic: Decoded Quantum Interferometry
     problem: Optimal Polynomial Intersection
     qubits: 1885
-    gates: 5.72e+06
+    gates: 5720000
     gate_type: Toffoli
-    number: 10

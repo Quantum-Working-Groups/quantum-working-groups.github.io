@@ -1,15 +1,15 @@
-reference: https://arxiv.org/pdf/2512.03758
+reference: "2512.03758"
 url: https://arxiv.org/pdf/2512.03758
 year: 2025
 samples: "no"
-samples_notes: >-
-  'sampling' appears only in a cited reference title; no measurement-shot count in the work.
+samples_notes: "'sampling' appears only in a cited reference title; no measurement-shot count in the work."
 estimates:
   - area: Differential Equations
     topic: Lattice Boltzmann equation
     problem: CFD
     qubits: 120
-    gates: 1.0e+11
+    gates: 100000000000
     gate_type: T
     comments: >-
-      Empirical estimates (no convergence proofs), Re=1e6, Carleman truncation N_c = 20
+      Empirical estimates (no convergence proofs), $\mathrm{Re}=10^6$, Carleman truncation $N_C =
+      20$

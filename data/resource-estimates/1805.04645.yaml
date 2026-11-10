@@ -2,29 +2,31 @@ reference: "1805.04645"
 year: 2018
 samples: "no"
 samples_notes: >-
-  'number of repetitions r' is the Trotter product-formula (S4/S6) step count = circuit depth,
-  not measurement shots.
+  'number of repetitions r' is the Trotter product-formula (S4/S6) step count = circuit depth, not
+  measurement shots.
 estimates:
   - area: Hamiltonian Simulation
     topic: Condensed Matter Physics
     problem: Spin Systems on Graphs
     qubits: 131
-    gates: 6.7e+06
+    gates: 6800000
     gate_type: T
     comments: Row 1 (4th order Trotter & RUS circuit)
   - area: Hamiltonian Simulation
     topic: Condensed Matter Physics
     problem: Spin Systems on Graphs
     qubits: 131
-    gates: 1.32e+07
+    gates: 13200000
     gate_type: T
     location: Table I
-    comments: Row 4 (6th order Trotter & RUS circuit)
+    comments: >-
+      Row 4 (6th order Trotter & RUS circuit); 6th-order estimate — row 10 is the 4th-order entry
+      for the same graph
   - area: Hamiltonian Simulation
     topic: Condensed Matter Physics
     problem: Spin Systems on Graphs
     qubits: 101
-    gates: 7.2e+06
+    gates: 7200000
     gate_type: T
     location: Table I
     comments: Row 6 (6th order Trotter & RUS circuit)

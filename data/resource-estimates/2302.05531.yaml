@@ -7,22 +7,22 @@ samples_notes: >-
 estimates:
   - area: Hamiltonian Simulation
     topic: Materials
-    problem: Lithium batteries
+    problem: Lithium batteries ($\mathrm{LiNiO_2}$, $R\bar{3}m$)
     qubits: 89162
-    gates: 7.86e+13
+    gates: 78600000000000
     gate_type: Toffoli
-    comments: LCU & particular system configuration
+    comments: SF LCU, $[2,2,2]$ k-mesh & particular system configuration
   - area: Hamiltonian Simulation
     topic: Materials
     problem: Lithium batteries (C2/m complex)
-    qubits: 83532
-    gates: 1.03e+13
+    qubits: 75178
+    gates: 1180000000000
     gate_type: Toffoli
-    comments: LCU & particular system configuration
+    comments: DF LCU, $[2,2,1]$ k-mesh & particular system configuration
   - area: Hamiltonian Simulation
     topic: Materials
     problem: Lithium batteries (P2/c complex)
-    qubits: 99918
-    gates: 2.06e+13
+    qubits: 75834
+    gates: 972000000000
     gate_type: Toffoli
-    comments: LCU & particular system configuration
+    comments: DF LCU, $[1,1,1]$ k-mesh & particular system configuration

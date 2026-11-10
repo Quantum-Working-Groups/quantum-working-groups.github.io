@@ -1,13 +1,15 @@
 reference: "2012.09238"
 year: 2020
 samples: "no"
-samples_notes: >-
-  No mention of shots/samples/measurement repetitions; reports qubit/gate counts only.
+samples_notes: No mention of shots/samples/measurement repetitions; reports qubit/gate counts only.
 estimates:
   - area: Hamiltonian Simulation
     topic: Condensed Matter Physics
     problem: 2D 10 × 10 Fermi–Hubbard model
-    qubits: 250
-    gates: 5.0e+06
+    qubits: 252
+    gates: 6400000
     gate_type: T
-    comments: Ground State - Trotterized QPE
+    comments: >-
+      Ground State - Trotterized QPE; $u/\tau = 8$; T count converted at the audit convention 1
+      Toffoli = 7 T: $7 \times 4.4 \times 10^{5} + 3.3 \times 10^{6} = 6.38 \times 10^{6}$ T (owner
+      ruling, 2026-11-09)

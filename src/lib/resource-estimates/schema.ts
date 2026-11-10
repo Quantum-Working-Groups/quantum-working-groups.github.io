@@ -14,7 +14,7 @@ export const EstimateSchema = z
     problem: z.string().min(1),
     qubits: Quantity,
     gates: Quantity,
-    gate_type: z.enum(["T", "Toffoli"]),
+    gate_type: z.enum(["T", "Toffoli", "Non-Clifford (T + Toffoli)"]),
     location: z.string().optional(),
     comments: z.string().optional(),
     include: z.boolean().optional(),

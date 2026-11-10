@@ -7,13 +7,13 @@ estimates:
     topic: Chemistry
     problem: Lithium-ion battery molecules (LFEC)
     qubits: 100000
-    gates: 1.0e+14
+    gates: 100000000000000
     gate_type: T
     comments: QPE
   - area: Hamiltonian Simulation
     topic: Chemistry
-    problem: Lithium-ion battery molecules (PF^{-1}_6)
+    problem: Lithium-ion battery molecules ($\mathrm{PF}^{-1}_6$)
     qubits: 74348
-    gates: 4.55e+13
+    gates: 45500000000000
     gate_type: T
     comments: QPE
