@@ -12,9 +12,3 @@ estimates:
       Abstract circuit-model estimate (2019 formula in Table I); distillation costs left out; qubits
       evaluated from the paper's formula $3n + 0.002\,n\lg n$ at $n = 2048$, not printed — accepted
       as explicit by owner ruling (2026-11-06), as for row 6; gates are Table 1's Toffoli+T/2 count
-  - area: Cryptography
-    problem: ECC-224
-    qubits: 2000
-    gates: 85000000000
-    gate_type: Toffoli
-    comments: ECC-224 provides about the same level of security as RSA-2048 (Roettler formula in Table I)

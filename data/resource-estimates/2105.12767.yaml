@@ -7,13 +7,6 @@ samples_notes: >-
 estimates:
   - area: Hamiltonian Simulation
     topic: Chemistry
-    problem: Lithium-ion battery molecules
-    qubits: 3000
-    gates: 1000000000000
-    gate_type: T
-    comments: QPE
-  - area: Hamiltonian Simulation
-    topic: Chemistry
     problem: ethylene carbonate
     qubits: 1701
     gates: 66000000000
