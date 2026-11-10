@@ -6,10 +6,10 @@ samples_notes: "'sampling' appears only in a cited reference title; no measureme
 estimates:
   - area: Differential Equations
     topic: Lattice Boltzmann equation
-    problem: CFD
-    qubits: 120
-    gates: 100000000000
+    problem: 2D Lattice-Boltzmann CFD on a torus with $\mathrm{Re} \leq 250$
+    qubits: 110
+    gates: 56000000000
     gate_type: T
     comments: >-
-      Empirical estimates (no convergence proofs), $\mathrm{Re}=10^6$, Carleman truncation $N_C =
-      20$
+      D2Q9 model, periodic boundaries (torus), $\mathrm{Re} \leq 250$; numbers taken from Stefan
+      (owner ruling, 2026-11-10); empirical estimates (no convergence proofs)
