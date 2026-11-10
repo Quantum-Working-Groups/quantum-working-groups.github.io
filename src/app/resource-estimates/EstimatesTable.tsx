@@ -40,7 +40,7 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
             {rows.map((p, i) => (
               <tr
                 key={`${p.reference}-${p.problem}-${i}`}
-                className="border-b border-border-subtle"
+                className="group border-b border-border-subtle transition-colors hover:bg-[#e8e8e8]"
               >
                 <td className="py-2 pr-4 whitespace-nowrap">
                   <span
@@ -64,7 +64,7 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
                       href={p.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:underline"
+                      className="underline-offset-4 hover:underline group-hover:underline"
                     >
                       {p.reference}
                     </a>
