@@ -164,7 +164,7 @@ export function AlgorithmSpace({ data }: { data: ChartData }) {
             <div
               id={tipId}
               role="tooltip"
-              className="pointer-events-none absolute z-10 max-w-[320px] rounded-sm border border-border-subtle bg-white px-3 py-2 text-[13px] leading-[18px] text-text-primary shadow-lg"
+              className="pointer-events-none absolute z-10 w-max max-w-[320px] rounded-sm border border-border-subtle bg-white px-3 py-2 text-[13px] leading-[18px] text-text-primary shadow-lg"
               style={{
                 left: `${(tip.x / W) * 100}%`,
                 top: `${(tip.y / H) * 100}%`,
