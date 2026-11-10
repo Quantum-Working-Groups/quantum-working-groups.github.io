@@ -6,7 +6,7 @@ import { getChartData } from "@/lib/resource-estimates/data";
 import { AlgorithmSpace } from "./AlgorithmSpace";
 
 export const metadata: Metadata = {
-  title: "Estimating quantum resource requirements | Quantum Technical Working Groups",
+  title: "Charting quantum resource estimates | Quantum Technical Working Groups",
   description:
     "Published estimates of the logical qubits and operations needed to run quantum algorithms, grouped by application area.",
 };
@@ -28,7 +28,7 @@ export default function ResourceEstimatesPage() {
             {" /"}
           </p>
           <h1 className="font-serif font-normal text-[48px] leading-[56px] text-white text-center text-balance">
-            Estimating quantum resource requirements
+            Charting quantum resource estimates
           </h1>
         </div>
       </section>
@@ -41,27 +41,13 @@ export default function ResourceEstimatesPage() {
             </h2>
             <p className="text-base leading-[24px] text-text-secondary">
               Researchers are constantly looking to solve larger and more complex problems with
-              quantum. As more examples are published, they build a picture of the quantum resources
-              required to tackle these computational challenges. Compare resource estimates below to
-              learn how requirements have evolved over time and across application areas.
+              quantum. New algorithm research sharpens the picture of the quantum resources required
+              to tackle these computational challenges. Compare resource estimates below to learn
+              how requirements have evolved over time.
             </p>
           </div>
 
           <AlgorithmSpace data={data} />
-
-          {data.skipped.length > 0 && (
-            <details className="text-sm text-text-secondary">
-              <summary className="cursor-pointer">
-                {data.skipped.length} more estimate{data.skipped.length === 1 ? "" : "s"} not shown
-                on the chart
-              </summary>
-              <ul className="mt-2 list-disc pl-5 flex flex-col gap-1">
-                {data.skipped.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-              </ul>
-            </details>
-          )}
         </div>
       </section>
     </>

@@ -1,3 +1,4 @@
+import { ArrowUpRightIcon } from "@/components/icons/ArrowUpRightIcon";
 import { REPORT_ISSUE_URL, T_GATES_PER_TOFFOLI } from "@/lib/resource-estimates/config";
 import type { ChartData, Point } from "@/lib/resource-estimates/data";
 
@@ -6,7 +7,7 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
   const rows = [...points].sort((a, b) => a.area.localeCompare(b.area) || a.gates - b.gates);
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="mt-10 flex flex-col gap-6">
       <div className="flex max-w-[614px] flex-col gap-2">
         <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
           Quantum algorithm resource estimates ({rows.length})
@@ -29,7 +30,7 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
         <table className="w-full text-sm text-left">
           <thead className="text-text-secondary border-b border-border-subtle">
             <tr>
-              {["Area", "Problem", "Qubits", "Operations", "Year", "Reference"].map((h) => (
+              {["Area", "Problem", "Qubits", "Operations", "Year", "arXiv link"].map((h) => (
                 <th key={h} scope="col" className="py-2 pr-4 font-semibold whitespace-nowrap">
                   {h}
                 </th>
@@ -64,9 +65,10 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
                       href={p.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline-offset-4 hover:underline group-hover:underline"
+                      className="inline-flex items-center gap-1 underline-offset-4 group-hover:underline"
                     >
                       {p.reference}
+                      <ArrowUpRightIcon />
                     </a>
                   ) : (
                     p.reference

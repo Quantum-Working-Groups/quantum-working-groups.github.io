@@ -119,7 +119,7 @@ export function loadPoints(): { points: Point[]; skipped: string[] } {
         gateType: converted ? "T" : est.gate_type,
         converted,
         reportedGates: g[0],
-        reference: shownRef,
+        reference: ref,
         url,
         year: doc.year,
         comments: est.comments ?? "",
