@@ -18,6 +18,9 @@ export interface AreaConfig {
   cloudOpacity?: number;
 }
 
+export const REPORT_ISSUE_URL =
+  "https://github.com/Quantum-Working-Groups/quantum-working-groups.github.io/issues/new?template=resource-estimates-bug.yml";
+
 export const CHART = {
   /**
    * Upper bound of the x axis, in operations (for example 1e12). Estimates above it are

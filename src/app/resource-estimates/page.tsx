@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "katex/dist/katex.min.css";
 import { DetailsHeroBackground } from "@/app/working-groups/[id]/DetailsHeroBackground";
-import { GithubIcon } from "@/components/icons/GithubIcon";
 import { getChartData } from "@/lib/resource-estimates/data";
 import { AlgorithmSpace } from "./AlgorithmSpace";
 
@@ -11,9 +10,6 @@ export const metadata: Metadata = {
   description:
     "Published estimates of the logical qubits and operations needed to run quantum algorithms, grouped by application area.",
 };
-
-const REPORT_ISSUE_URL =
-  "https://github.com/Quantum-Working-Groups/quantum-working-groups.github.io/issues/new?template=resource-estimates-bug.yml";
 
 export default function ResourceEstimatesPage() {
   const data = getChartData();
@@ -53,32 +49,19 @@ export default function ResourceEstimatesPage() {
 
           <AlgorithmSpace data={data} />
 
-          <div className="flex flex-col gap-6">
-            {data.skipped.length > 0 && (
-              <details className="text-sm text-text-secondary">
-                <summary className="cursor-pointer">
-                  {data.skipped.length} more estimate{data.skipped.length === 1 ? "" : "s"} not
-                  shown on the chart
-                </summary>
-                <ul className="mt-2 list-disc pl-5 flex flex-col gap-1">
-                  {data.skipped.map((s) => (
-                    <li key={s}>{s}</li>
-                  ))}
-                </ul>
-              </details>
-            )}
-            <div>
-              <a
-                href={REPORT_ISSUE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-teal-70 px-6 py-3 text-sm tracking-[0.16px] text-teal-70 hover:bg-layer-01 transition-colors"
-              >
-                Report a bug or data issue
-                <GithubIcon size={16} />
-              </a>
-            </div>
-          </div>
+          {data.skipped.length > 0 && (
+            <details className="text-sm text-text-secondary">
+              <summary className="cursor-pointer">
+                {data.skipped.length} more estimate{data.skipped.length === 1 ? "" : "s"} not shown
+                on the chart
+              </summary>
+              <ul className="mt-2 list-disc pl-5 flex flex-col gap-1">
+                {data.skipped.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+            </details>
+          )}
         </div>
       </section>
     </>

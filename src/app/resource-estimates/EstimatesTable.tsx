@@ -1,3 +1,4 @@
+import { REPORT_ISSUE_URL } from "@/lib/resource-estimates/config";
 import type { ChartData, Point } from "@/lib/resource-estimates/data";
 
 export function EstimatesTable({ points, areas }: { points: Point[]; areas: ChartData["areas"] }) {
@@ -6,9 +7,24 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
 
   return (
     <div className="flex flex-col gap-6">
-      <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
-        Quantum algorithm resource estimates ({rows.length})
-      </h2>
+      <div className="flex max-w-[614px] flex-col gap-2">
+        <h2 className="font-sans font-semibold text-[20px] leading-[28px] text-text-primary">
+          Quantum algorithm resource estimates ({rows.length})
+        </h2>
+        <p className="text-sm text-text-secondary">
+          This evolving collection highlights research progress and the quantum computing resources
+          needed to support it. To report a bug or data discrepancy,{" "}
+          <a
+            href={REPORT_ISSUE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-70 underline hover:no-underline"
+          >
+            submit an issue
+          </a>
+          .
+        </p>
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-left">
           <thead className="text-text-secondary border-b border-border-subtle">
