@@ -19,54 +19,6 @@ samples_notes: >-
 estimates:
   - area: High Energy Physics
     topic: Dynamics of Lattice Gauge Theories
-    problem: 1D QED vacuum return amplitude; 16 staggered sites, wt=1
-    qubits: 55
-    gates: 9110000000
-    gate_type: T
-    location: Table 2; Result 3
-    comments: The derived logical total is 16 data qubits plus 39 ancillary qubits. The T count includes observable estimation.
-  - area: High Energy Physics
-    topic: Dynamics of Lattice Gauge Theories
-    problem: 1D QED vacuum return amplitude; 16 staggered sites, wt=10
-    qubits: 55
-    gates: 77700000000
-    gate_type: T
-    location: Table 2; Result 3
-    comments: The derived logical total is 16 data qubits plus 39 ancillary qubits. The T count includes observable estimation.
-  - area: High Energy Physics
-    topic: Dynamics of Lattice Gauge Theories
-    problem: 1D QED vacuum return amplitude; 16 staggered sites, wt=100
-    qubits: 55
-    gates: 825000000000
-    gate_type: T
-    location: Table 2; Result 3
-    comments: The derived logical total is 16 data qubits plus 39 ancillary qubits. The T count includes observable estimation.
-  - area: High Energy Physics
-    topic: Dynamics of Lattice Gauge Theories
-    problem: 1D QED vacuum return amplitude; 32 staggered sites, wt=1
-    qubits: 80
-    gates: 30000000000
-    gate_type: T
-    location: Table 2; Result 3
-    comments: The derived logical total is 32 data qubits plus 48 ancillary qubits. The T count includes observable estimation.
-  - area: High Energy Physics
-    topic: Dynamics of Lattice Gauge Theories
-    problem: 1D QED vacuum return amplitude; 32 staggered sites, wt=10
-    qubits: 80
-    gates: 325000000000
-    gate_type: T
-    location: Table 2; Result 3
-    comments: The derived logical total is 32 data qubits plus 48 ancillary qubits. The T count includes observable estimation.
-  - area: High Energy Physics
-    topic: Dynamics of Lattice Gauge Theories
-    problem: 1D QED vacuum return amplitude; 32 staggered sites, wt=100
-    qubits: 80
-    gates: 3830000000000
-    gate_type: T
-    location: Table 2; Result 3
-    comments: The derived logical total is 32 data qubits plus 48 ancillary qubits. The T count includes observable estimation.
-  - area: High Energy Physics
-    topic: Dynamics of Lattice Gauge Theories
     problem: 1D QED vacuum return amplitude; 64 staggered sites, wt=1
     qubits: 143
     gates: 188000000000
