@@ -11,8 +11,8 @@ samples_notes: >-
   entries with T counts at or below 1e13 are retained.
 # Qubit counts are quoted logical circuit resources, not physical qubits.
 estimates:
-  - area: Hamiltonian Simulation
-    topic: High Energy Physics
+  - area: High Energy Physics
+    topic: Dynamics of Lattice Gauge Theories
     problem: 2D QED with matter; 100 x 100, a=1, error 0.001, new simulation
     qubits: 81000
     gates: 4700000000000
