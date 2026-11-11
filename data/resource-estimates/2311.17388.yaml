@@ -1,0 +1,43 @@
+reference: "2311.17388"
+url: https://arxiv.org/abs/2311.17388v3
+title: End-to-end complexity for simulating the Schwinger model on quantum computers
+year: 2023
+status: verified
+samples: "yes"
+samples_notes: >-
+  Table 2 includes Chebyshev amplitude estimation of the magnitude of the vacuum return
+  amplitude, not only one evolution circuit. Result 3 uses an empirically estimated average
+  reflection-query count of about 2000. The final additive observable error is 0.01 with
+  failure probability 0.05. The initial state is the Neel product state, not a separately
+  prepared interacting vacuum.
+# All rows use a=0.2, m=0.1, theta=pi, g=1, w=2.5, and J=0.1 (Section 4.2).
+# T counts are quoted from Table 2. Only counts at or below 1e13 are retained.
+# Logical-qubit totals are derived from Result 3, which labels its workspace ANCILLA:
+# Q_logical = N + max(N+2b+3, 6b+M+6), b=ceil(log2 N),
+# M=max(2 ceil(log2 N')+ceil(log2(N'-1)), 3 ceil(log2 N'')),
+# N'=ceil(N/2), N''=floor(N/2). Physical error correction, routing, and factories are excluded.
+estimates:
+  - area: High Energy Physics
+    topic: Dynamics of Lattice Gauge Theories
+    problem: 1D QED vacuum return amplitude; 64 staggered sites, wt=1
+    qubits: 143
+    gates: 188000000000
+    gate_type: T
+    location: Table 2; Result 3
+    comments: The derived logical total is 64 data qubits plus 79 ancillary qubits. The T count includes observable estimation.
+  - area: High Energy Physics
+    topic: Dynamics of Lattice Gauge Theories
+    problem: 1D QED vacuum return amplitude; 64 staggered sites, wt=10
+    qubits: 143
+    gates: 2190000000000
+    gate_type: T
+    location: Table 2; Result 3
+    comments: The derived logical total is 64 data qubits plus 79 ancillary qubits. The T count includes observable estimation.
+  - area: High Energy Physics
+    topic: Dynamics of Lattice Gauge Theories
+    problem: 1D QED vacuum return amplitude; 128 staggered sites, wt=1
+    qubits: 273
+    gates: 1600000000000
+    gate_type: T
+    location: Table 2; Result 3
+    comments: The derived logical total is 128 data qubits plus 145 ancillary qubits. The T count includes observable estimation.

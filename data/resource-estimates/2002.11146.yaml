@@ -1,0 +1,37 @@
+reference: "2002.11146"
+url: https://arxiv.org/abs/2002.11146v3
+title: Quantum Algorithms for Simulating the Lattice Schwinger Model
+year: 2020
+status: verified
+samples: "yes"
+samples_notes: >-
+  These are complete direct-sampling estimates for the mean pair density, including repeated
+  evolution and measurement. They are not single-evolution or per-Trotter-step counts.
+# Qubit counts are logical upper bounds including sampling-circuit workspace.
+# Physical error correction, routing, and magic-state factories are excluded.
+# Only estimates with T counts at or below 1e13 are retained.
+estimates:
+  - area: High Energy Physics
+    topic: Dynamics of Lattice Gauge Theories
+    problem: 1D QED pair density; 64 staggered sites, cutoff 8, short time
+    qubits: 333
+    gates: 1500000000
+    gate_type: T
+    location: Appendix B, Table 3; Theorem 19
+    comments: >-
+      The quoted direct-sampling T-count upper bound uses N=64, Lambda=8, x=10, mu=1,
+      dimensionless time tau=10/x=1, and mean-squared observable error 0.1. The logical-qubit
+      upper bound is derived from Theorem 19: eta=4 and Q=64(4+1)+16-2-1=333,
+      including sampling-circuit workspace.
+  - area: High Energy Physics
+    topic: Dynamics of Lattice Gauge Theories
+    problem: 1D QED pair density; 64 staggered sites, cutoff 8, long time
+    qubits: 333
+    gates: 1700000000000
+    gate_type: T
+    location: Appendix B, Table 3; Theorem 19
+    comments: >-
+      The quoted direct-sampling T-count upper bound uses N=64, Lambda=8, x=10, mu=1,
+      dimensionless time tau=1000/x=100, and mean-squared observable error 0.1. Theorem 19
+      with eta=4 gives the logical-qubit upper bound Q=333, including sampling-circuit
+      workspace. This is not a continuum-error budget.
