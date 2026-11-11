@@ -1,0 +1,26 @@
+reference: "2405.10416"
+url: https://arxiv.org/abs/2405.10416v2
+title: Exponential improvements in the simulation of lattice gauge theories using near-optimal techniques
+year: 2024
+status: verified
+samples: "no"
+samples_notes: >-
+  This is a compiled total evolution-circuit estimate, not a complete separately specified
+  state-preparation and repeated-observable-estimation workload. The parameters are linear
+  lattice size N=100, t=10, Lambda=10, m=g=10, a=1, and epsilon=1e-3. Only numerical
+  entries with T counts at or below 1e13 are retained.
+# Qubit counts are quoted logical circuit resources, not physical qubits.
+estimates:
+  - area: High Energy Physics
+    topic: Dynamics of Lattice Gauge Theories
+    problem: 2D QED with matter; 100 x 100, a=1, error 0.001, new simulation
+    qubits: 81000
+    gates: 4700000000000
+    gate_type: T
+    location: Table I
+    comments: >-
+      The paper quotes 81000 logical circuit qubits and 4.7e12 T gates. The U(1) simulation
+      uses LCU and HHKL locality-based decomposition. The paper discusses finite-size
+      limitations when decomposition blocks are not substantially smaller than the lattice.
+      This is a finite-lattice evolution estimate, not a continuum-error, initial-state-preparation,
+      or measurement budget. Physical error-correction and magic-state resources are excluded.
