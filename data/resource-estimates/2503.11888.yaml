@@ -1,0 +1,89 @@
+reference: "2503.11888"
+url: https://arxiv.org/abs/2503.11888v2
+title: Efficient Truncations of SU(N_c) Lattice Gauge Theory for Quantum Simulation
+year: 2025
+status: verified
+samples: "no"
+samples_notes: >-
+  Table 3 counts only one first-order Trotter step, not complete evolution or repeated
+  observable estimation. All entries are deliberately excluded from the comparison chart
+  because no matched total-time, Trotter-error, state-preparation, or measurement budget
+  is supplied. Rotation synthesis uses accuracy 1e-10. No dynamical quarks are included.
+# Qubit counts are quoted logical state-register counts only, not full circuit workspace.
+# Physical error correction, routing, and magic-state factories are excluded.
+# Only T counts at or below 1e13 are retained.
+estimates:
+  - area: Hamiltonian Simulation
+    topic: High Energy Physics
+    problem: 2D truncated pure SU(3); 10 x 10, (1,1,1), T gates per step only
+    qubits: 100
+    gates: 64600
+    gate_type: T
+    location: Section V, Table 3
+    include: false
+    comments: >-
+      Quoted state-register count and T cost for one first-order step of the (1,1,1)
+      pure-gauge truncation. The small 2D implementation is in the even charge-conjugation
+      sector. This is neither a full workload nor converged continuum QCD with quarks.
+  - area: Hamiltonian Simulation
+    topic: High Energy Physics
+    problem: 2D truncated pure SU(3); 10 x 10, (1,2,1), T gates per step only
+    qubits: 100
+    gates: 72700
+    gate_type: T
+    location: Section V, Table 3
+    include: false
+    comments: >-
+      Quoted state-register count and T cost for one first-order step of the (1,2,1)
+      pure-gauge truncation. Rotation synthesis error is 1e-10 per rotation, not a complete
+      evolution or continuum-error target. No dynamical quarks or full workload are included.
+  - area: Hamiltonian Simulation
+    topic: High Energy Physics
+    problem: 2D truncated pure SU(3); 10 x 10, (2,2,2), T gates per step only
+    qubits: 500
+    gates: 940000000
+    gate_type: T
+    location: Section V, Table 3
+    include: false
+    comments: >-
+      Quoted state-register count and T cost for one first-order step of the (2,2,2)
+      pure-gauge truncation with order-1/N_c corrections. No dynamical quarks are included.
+      Ancilla-inclusive logical hardware, total evolution, and observable estimation are
+      not established by this table.
+  - area: Hamiltonian Simulation
+    topic: High Energy Physics
+    problem: 3D truncated pure SU(3); 10 x 10 x 10, (1,1,1), T gates per step only
+    qubits: 3000
+    gates: 17900000
+    gate_type: T
+    location: Section V, Table 3
+    include: false
+    comments: >-
+      Quoted state-register count and T cost for one first-order step of the (1,1,1)
+      pure-gauge truncation. No dynamical quarks or full evolution and measurement budget
+      is included. These numbers must not be presented as full 3D QCD resources.
+  - area: Hamiltonian Simulation
+    topic: High Energy Physics
+    problem: 3D truncated pure SU(3); 10 x 10 x 10, (1,2,1), T gates per step only
+    qubits: 3000
+    gates: 230000000
+    gate_type: T
+    location: Section V, Table 3
+    include: false
+    comments: >-
+      Quoted state-register count and T cost for one first-order step of the (1,2,1)
+      pure-gauge truncation. Rotation synthesis error is 1e-10 per rotation, not a complete
+      evolution or continuum-error target. No dynamical quarks or full workload are included.
+  - area: Hamiltonian Simulation
+    topic: High Energy Physics
+    problem: 3D truncated pure SU(3); 10 x 10 x 10, (2,2,2), T gates per step only
+    qubits: 12000
+    gates: 28000000000
+    gate_type: T
+    location: Section V, Table 3
+    include: false
+    comments: >-
+      Quoted state-register count and T cost for one first-order step of the (2,2,2)
+      pure-gauge truncation with order-1/N_c corrections. No dynamical quarks are included.
+      Ancilla-inclusive logical hardware, total evolution, and observable estimation are
+      not established by this table.
