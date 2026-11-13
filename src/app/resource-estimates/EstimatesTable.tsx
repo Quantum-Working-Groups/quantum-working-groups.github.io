@@ -13,8 +13,9 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
           Quantum algorithm resource estimates ({rows.length})
         </h2>
         <p className="text-sm text-text-secondary">
-          This evolving collection highlights research progress and the quantum computing resources
-          needed to support it. To report a bug or data discrepancy,{" "}
+          This collection highlights key advancements in quantum algorithms research and the
+          estimated quantum computing resources required to support them. As the field is constantly
+          evolving, so is this list! To report a bug or data discrepancy,{" "}
           <a
             href={REPORT_ISSUE_URL}
             target="_blank"
@@ -30,7 +31,7 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
         <table className="w-full text-sm text-left">
           <thead className="text-text-secondary border-b border-border-subtle">
             <tr>
-              {["Area", "Problem", "Qubits", "Operations", "Year", "arXiv link"].map((h) => (
+              {["Area", "Problem", "Operations", "Qubits", "Year", "arXiv link"].map((h) => (
                 <th key={h} scope="col" className="py-2 pr-4 font-semibold whitespace-nowrap">
                   {h}
                 </th>
@@ -52,12 +53,12 @@ export function EstimatesTable({ points, areas }: { points: Point[]; areas: Char
                   {byArea.get(p.area)?.label ?? p.area}
                 </td>
                 <td className="py-2 pr-4" dangerouslySetInnerHTML={{ __html: p.problemHtml }} />
-                <td className="py-2 pr-4 tabular-nums whitespace-nowrap">{p.qubitsText}</td>
                 <td className="py-2 pr-4 tabular-nums whitespace-nowrap">
                   {p.gates.toExponential(1)}
                   {p.converted && "*"}
                   {p.gateType !== "T" && <span className="ml-1">{p.gateType}</span>}
                 </td>
+                <td className="py-2 pr-4 tabular-nums whitespace-nowrap">{p.qubitsText}</td>
                 <td className="py-2 pr-4 tabular-nums">{p.year}</td>
                 <td className="py-2 pr-4">
                   {p.url ? (

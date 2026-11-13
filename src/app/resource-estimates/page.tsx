@@ -41,9 +41,9 @@ export default function ResourceEstimatesPage() {
             </h2>
             <p className="text-base leading-[24px] text-text-secondary">
               Researchers are constantly looking to solve larger and more complex problems with
-              quantum. New algorithm research sharpens the picture of the quantum resources required
-              to tackle these computational challenges. Compare resource estimates below to learn
-              how requirements have evolved over time.
+              quantum. New algorithm research sharpens the picture of the quantum resources that
+              will be needed to tackle these computational challenges. Compare resource estimates
+              below to learn how requirements have evolved over time.
             </p>
           </div>
 
