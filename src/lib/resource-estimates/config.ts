@@ -38,7 +38,7 @@ export const CHART = {
   cloudSmooth: 0.6,
   cloudOpacity: 0.13,
   /** Shaded "out of scope" region: left of / below these bounds. */
-  region: { minGates: 5e3, minQubits: 70 },
+  region: { minGates: 3e3, minQubits: 70 },
 };
 
 // Colors follow the original slide. Optimization is a darker shade of the
